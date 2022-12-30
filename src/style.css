@@ -1,5 +1,4 @@
 :root {
-    --color: #ffcc4d;
     --text: #000000;
     --back: #fffaf0;
     --grad: #ffc7d0;
@@ -16,24 +15,22 @@ html {
 
 h1 {
     font-size: 50px;
-    display: inline-block;
     padding: 15px;
     color: var(--text);
-    background-color: var(--color);
     margin-bottom: 15px;
 }
 
-.box {
+div {
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.box.is-button {
+.buttons {
     display: flex;
     justify-content: center;
 }
 
-.box.is-button a {
+.buttons a {
     display: inline-block;
     text-decoration: none;
     color: var(--text);
@@ -43,13 +40,13 @@ h1 {
     padding: 10px;
 }
 
-.box.is-button a:hover,
-.box.is-button a:focus {
+.buttons a:hover,
+.buttons a:focus {
     outline: none;
     filter: drop-shadow(0 0 3px var(--color));
     text-shadow: var(--text) 1px 0 10px;
 }
 
-.box.is-button a:not(:last-child) {
+.buttons a:not(:last-child) {
     margin-right: 7px;
 }
