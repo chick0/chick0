@@ -20,6 +20,10 @@ h1 {
     margin-bottom: 15px;
 }
 
+img.profile {
+    border-radius: 50%;
+}
+
 div {
     margin-top: 50px;
     margin-bottom: 50px;
