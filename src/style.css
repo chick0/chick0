@@ -6,7 +6,7 @@
 
 html {
     font-family: D2Coding, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     height: 100%;
     background: linear-gradient(var(--back), var(--grad));
@@ -42,6 +42,8 @@ div {
     border-radius: .25rem;
     background-color: var(--color);
     padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .buttons a:hover,
