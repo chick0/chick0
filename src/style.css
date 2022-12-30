@@ -48,7 +48,6 @@ div {
 .buttons a:focus {
     outline: none;
     filter: drop-shadow(0 0 3px var(--color));
-    text-shadow: var(--text) 1px 0 10px;
 }
 
 .buttons a:not(:last-child) {
