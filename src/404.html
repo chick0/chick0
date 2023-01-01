@@ -6,7 +6,7 @@
         <meta name="author" content="chick_0">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no">
         <meta name="theme-color" content="#fffaf0">
-        <title>chick_0</title>
+        <title>404</title>
         <link rel="icon" type="image/png" href="/icon.png" sizes="192x192">
         <link rel="apple-touch-icon" sizes="192x192" href="/icon.png">
         <link rel="stylesheet" href="/style.css">
@@ -22,6 +22,29 @@
                 <i class="fa-solid fa-house"></i>
                 Home
             </a>
+            <a href="javascript:history.back();" style="--color: #ffcc4d; --text: #000">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                Back
+            </a>
         </div>
+
+        <script>
+            const div = document.querySelector("div");
+
+            const p = document.createElement("p");
+            p.style.marginTop = "20px";
+            div.appendChild(p);
+
+            let timeleft = 5;
+
+            setInterval(() => {
+                if (timeleft <= 0) {
+                    location.replace("/");
+                }
+
+                p.innerText = `Move to home after ${timeleft} second.`;
+                timeleft -= 1;
+            }, 1000);
+        </script>
     </body>
 </html>
