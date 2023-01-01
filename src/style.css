@@ -17,8 +17,8 @@ html {
     font-size: 22px;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(var(--back), var(--grad));
-    background-repeat: no-repeat;
+    background: linear-gradient(var(--back), var(--grad), var(--back));
+    background-size: 100vw 200vh;
 }
 
 h1 {
