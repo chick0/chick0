@@ -50,18 +50,14 @@ div {
     border: var(--color) 1px solid;
     border-radius: .25rem;
     background-color: var(--color);
+    margin: 4px;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 7px;
 }
 
 .buttons a:hover,
 .buttons a:focus {
     outline: none;
     filter: drop-shadow(0 0 3px var(--color));
-}
-
-.buttons a:not(:last-child) {
-    margin-right: 7px;
 }
