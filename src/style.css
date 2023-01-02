@@ -5,13 +5,29 @@
 @import url("https://cdn.jsdelivr.net/gh/chick0/fonts@master/d2coding/d2coding.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 
-/* Style */
+/* Color */
 :root {
     --text: #000000;
     --back: #fffaf0;
     --grad: #ffc7d0;
 }
 
+.yellow {
+    --color: #ffcc4d;
+    --text: #000000;
+}
+
+.blue {
+    --color: #0079d1;
+    --text: #ffffff;
+}
+
+.github {
+    --color: #151013;
+    --text: #ffffff;
+}
+
+/* Style */
 html {
     font-family: D2Coding, sans-serif;
     font-size: 22px;
