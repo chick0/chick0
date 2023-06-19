@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /$
-Allow: /icon.png
-Allow: /style.css
-Disallow: /
+Allow: /
