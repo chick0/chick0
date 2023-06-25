@@ -19,11 +19,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400&display=swap&text=EGabhilmtu" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap&text=0_chik" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap&text=0_chik" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400&display=swap&text=EGPabhilmturojec" />
         <style>
             html {
-                font-family: "Nanum Gothic Coding", monospace;
+                font-family: "Nanum Gothic Coding", sans-serif;
                 text-align: center;
                 position: absolute;
                 width: 100vw;
@@ -60,16 +60,21 @@
                 margin-bottom: 10px;
             }
 
-            a {
+            a,
+            span {
                 font-weight: 400;
                 font-size: 20px;
-                color: #ffef00 !important;
-                text-underline-offset: 3px;
-                text-decoration-thickness: 2px;
+                color: #e6e6e6;
+                text-decoration: none;
             }
 
-            a:hover {
+            a:hover,
+            a:focus {
+                color: #ffef00 !important;
+                outline: none;
+                text-decoration: underline 2px dotted;
                 text-shadow: #ffef00 0 0 5px;
+                text-underline-offset: 3px;
             }
         </style>
     </head>
@@ -80,6 +85,7 @@
             <hr />
             <div>
                 <a href="https://github.com/chick0">Github</a>
+                <span>·</span>
                 <a href="mailto:chick_0@kakao.com">Email</a>
             </div>
         </div>
