@@ -77,21 +77,20 @@
 
         width: 100%;
 
-        padding-left: 250px;
-        padding-right: 250px;
+        --padding: 250px;
+        padding-left: var(--padding);
+        padding-right: var(--padding);
     }
 
     @media (max-width: 768px) {
         .section > div {
-            padding-left: 10px;
-            padding-right: 10px;
+            --padding: 10px;
         }
     }
 
     @media (min-width: 768px) and (max-width: 1200px) {
         .section > div {
-            padding-left: 50px;
-            padding-right: 50px;
+            --padding: 50px;
         }
     }
 
