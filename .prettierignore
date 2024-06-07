@@ -1,0 +1,11 @@
+# Ignore files for PNPM, NPM and YARN
+.yarn/**
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# README
+README.md
+
+# Ignore for build result
+src/app.html
