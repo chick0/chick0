@@ -2,11 +2,12 @@
     width: 100%;
     height: 100vh;
 
-    --bg: url("/img/bg_main.jpg");
+    --bg: #1f1f1f;
+    --position: center;
     background: var(--bg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: var(--position);
 }
 
 .section > div {
