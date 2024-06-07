@@ -46,7 +46,7 @@
 
 <Section
     id="djmax-festa"
-    title="DJMAX FESTA STAFF"
+    title="DJMAX FESTA"
     subtitle="DJMAX RESPECT V <u>비공식</u> 유저 대회 DJMAX FESTA 스태프 참여"
     background={bg_festa}
     content={[
