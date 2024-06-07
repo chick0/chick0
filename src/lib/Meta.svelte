@@ -1,4 +1,6 @@
 <script>
+    import { PUBLIC_HOST } from "$env/static/public"
+
     /** 페이지 제목 */
     export let title = "chick_0"
 
@@ -21,5 +23,5 @@
     <!-- OG -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={image.startsWith("http") ? image : PUBLIC_HOST + image} />
 </svelte:head>

@@ -11,6 +11,9 @@
     /** @type {String} 배경 이미지 혹은 색상 */
     export let background = "#1f1f1f"
 
+    /** @type {String} 섹션 높이 */
+    export let height = "100vh"
+
     /** @type {("center" | "left"| "right")} 배경 이미지 위치 */
     export let position = "center"
 
@@ -33,7 +36,9 @@
 <div
     {id}
     class="section"
-    style="--bg: {background.startsWith('#') ? background : `url(${background})`}; --position: {position}">
+    style="--bg: {background.startsWith('#')
+        ? background
+        : `url(${background})`}; --position: {position}; --height: {height}">
     <div>
         <h1 class="title">{title}</h1>
         <p class="subtitle">{@html subtitle}</p>
@@ -61,7 +66,7 @@
 <style>
     .section {
         width: 100%;
-        height: 100vh;
+        height: var(--height);
         color: #fff;
 
         background: var(--bg);
