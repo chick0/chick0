@@ -18,8 +18,10 @@
 <style>
     .return {
         position: fixed;
-        top: 30px;
-        left: 30px;
+        --pos: 30px;
+        top: var(--pos);
+        left: var(--pos);
+        z-index: 10;
 
         color: #fff;
         background-color: rgba(0, 0, 0, 0.5);
@@ -29,6 +31,12 @@
 
         width: 50px;
         height: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .return {
+            --pos: 10px;
+        }
     }
 
     .return i {
@@ -44,6 +52,6 @@
 
     .return.ready {
         opacity: 1;
-        transition: 0.75s ease-out;
+        transition: 0.5s ease-out;
     }
 </style>
