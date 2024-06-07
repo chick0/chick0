@@ -61,9 +61,15 @@
 
 <div class="footer">
     <div>
-        <div class="pancake">🥞</div>
-        <div class="pancake">🥞</div>
-        <div class="pancake">🥞</div>
+        <div class="pancake-wrapper">
+            <div class="pancake">🥞</div>
+            <div class="pancake">🥞</div>
+            <div class="pancake">🥞</div>
+        </div>
+
+        <a href="#top">
+            <i class="fa fa-home"></i>
+        </a>
     </div>
 </div>
 
@@ -94,6 +100,10 @@
         justify-content: center;
         overflow: hidden;
         pointer-events: none;
+    }
+
+    .pancake-wrapper {
+        padding-bottom: 25px;
     }
 
     .pancake {
