@@ -67,7 +67,7 @@
     </div>
 </div>
 
-<style scoped>
+<style>
     .footer {
         background-color: #000;
         color: #fff;
