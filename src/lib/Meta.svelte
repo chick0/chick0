@@ -13,9 +13,12 @@
     /** 검색 키워드 `,`를 이용해 구분해주세요. */
     export let keywords = ""
 
-    if (image.startsWith("#")) {
+    // 이미지 여부 검증 (* 일부 상황에서는 색상 코드 사용됨)
+    const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
+
+    if (re.test(image)) {
         image = "https://ch1ck.xyz/favicon.png"
-    } else if (!image.startsWith("http")) {
+    } else {
         image = PUBLIC_HOST + image
     }
 </script>
