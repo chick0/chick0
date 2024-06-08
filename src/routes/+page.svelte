@@ -7,6 +7,12 @@
     import bg_festa from "$lib/assets/main/bg_dgf.jpg"
     import bg_cat_tab from "$lib/assets/main/bg_cat-tab.jpg"
     import bg_hja from "$lib/assets/main/bg_hja.jpg"
+
+    /** `[더 읽어보기]` 링크 버튼 색상 */
+    const POST_COLOR = "#3295eb"
+
+    /** `[더 읽어보기]` 링크 버튼 아이콘 */
+    const POST_ICON = "fa-book"
 </script>
 
 <Meta />
@@ -42,6 +48,14 @@
     content={[
         "4일간 진행된 게임잼 프로젝트에서 유니티 프로그래머로 참여했습니다.",
         "해당 게임의 기본 구조 및 인게임 플레이 과정을 제작했습니다.",
+    ]}
+    links={[
+        {
+            label: "더 읽어보기",
+            src: "/posts/paper-boat",
+            color: POST_COLOR,
+            icon: POST_ICON,
+        },
     ]} />
 
 <Section
