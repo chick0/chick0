@@ -7,7 +7,7 @@
 <Intro
     title="안녕하세요!"
     description="이 페이지에서는 제 프로젝트를 소개하는 글을 확인할 수 있습니다."
-    image="linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);"
+    image="linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)"
     returnTo="/"
     height="30vh" />
 
