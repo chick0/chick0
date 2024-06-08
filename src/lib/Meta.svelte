@@ -12,6 +12,12 @@
 
     /** 검색 키워드 `,`를 이용해 구분해주세요. */
     export let keywords = ""
+
+    if (image.startsWith("#")) {
+        image = "https://ch1ck.xyz/favicon.png"
+    } else if (!image.startsWith("http")) {
+        image = PUBLIC_HOST + image
+    }
 </script>
 
 <svelte:head>
@@ -23,5 +29,5 @@
     <!-- OG -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image.startsWith("http") ? image : PUBLIC_HOST + image} />
+    <meta property="og:image" content={image} />
 </svelte:head>
