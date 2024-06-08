@@ -55,7 +55,13 @@
 
 {#if isPancakeOver}
     <div class="confetti-wrapper">
-        <Confetti x={[-5, 5]} y={[0, 0.1]} delay={[50, 2000]} amount={300} duration={3000} fallDistance="100vh" />
+        <Confetti
+            x={[-5, 5]}
+            y={[0, 0.1]}
+            delay={[50, 2000]}
+            amount={300}
+            duration={3000}
+            fallDistance="100vh" />
     </div>
 {/if}
 
@@ -67,8 +73,8 @@
             <div class="pancake">🥞</div>
         </div>
 
-        <a href="#top">
-            <i class="fa fa-home"></i>
+        <a href="#top" title="페이지 상단으로 이동하기">
+            <i class="fa fa-arrow-up"></i>
         </a>
     </div>
 </div>
@@ -88,6 +94,23 @@
         transform: translate(-50%, -50%);
 
         text-align: center;
+    }
+
+    .footer a {
+        --background: #fff;
+        --text: #000;
+
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+
+        border-radius: 50%;
+    }
+
+    .footer a > i {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .confetti-wrapper {
