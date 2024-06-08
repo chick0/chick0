@@ -1,3 +1,7 @@
+<script>
+    import "$lib/css/content.css"
+</script>
+
 <div class="page-content">
     <slot />
 </div>
@@ -8,6 +12,7 @@
         background-color: #fff;
 
         padding-top: 40px;
+        padding-bottom: 40px;
 
         --padding: 250px;
         padding-left: var(--padding);

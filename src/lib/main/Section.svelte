@@ -31,14 +31,17 @@
 
     /** @type {Link[]} 링크 목록 */
     export let links = []
+
+    if (!background.startsWith("url(")) {
+        const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
+
+        if (!re.test(background)) {
+            background = `url(${background})`
+        }
+    }
 </script>
 
-<div
-    {id}
-    class="section"
-    style="--bg: {background.startsWith('#')
-        ? background
-        : `url(${background})`}; --position: {position}; --height: {height}">
+<div {id} class="section" style="--bg: {background}; --position: {position}; --height: {height}">
     <div>
         <h1 class="title">{title}</h1>
         <p class="subtitle">{@html subtitle}</p>
@@ -51,7 +54,9 @@
             <br />
             <div class="group">
                 {#each links as link}
-                    <a href={link.src} style="--background: {link.color}; --text: {link.text ?? '#fff'}">
+                    <a
+                        href={link.src}
+                        style="--background: {link.color}; --text: {link.text ?? '#fff'}">
                         {#if link.icon != null}
                             <i class="fa {link.icon}"></i>
                         {/if}
