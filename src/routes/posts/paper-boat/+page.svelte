@@ -1,9 +1,9 @@
 <script>
     import { onMount } from "svelte"
     import { highlightAll } from "$lib/hljs"
-    import Intro from "$lib/page/Intro.svelte"
-    import Content from "$lib/page/Content.svelte"
-    import Code from "$lib/page/Code.svelte"
+    import Intro from "$lib/component/Intro.svelte"
+    import Content from "$lib/component/Content.svelte"
+    import Code from "$lib/component/Code.svelte"
 
     import bg_paper_boat from "$lib/assets/main/bg_paperboat.jpg"
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"

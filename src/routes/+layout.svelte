@@ -3,9 +3,9 @@
     import { navigating, updated } from "$app/stores"
 
     import "$lib/css/base.css"
-    import Spinner from "$lib/Spinner.svelte"
-    import Footer from "$lib/layout/Footer.svelte"
-    import Box from "$lib/page/Box.svelte"
+    import Spinner from "$lib/component/Spinner.svelte"
+    import Footer from "$lib/component/Footer.svelte"
+    import Box from "$lib/component/Box.svelte"
 
     /** 페이지 로딩 여부 */
     let isLoading = false

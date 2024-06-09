@@ -1,6 +1,6 @@
 <script>
     import { page } from "$app/stores"
-    import Section from "$lib/main/Section.svelte"
+    import Section from "$lib/component/Section.svelte"
 
     import bg_main from "$lib/assets/main/bg_main.jpg"
 </script>

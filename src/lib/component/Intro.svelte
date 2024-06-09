@@ -1,6 +1,6 @@
 <script>
     import Meta from "$lib/Meta.svelte"
-    import Section from "$lib/main/Section.svelte"
+    import Section from "$lib/component/Section.svelte"
     import { PageReturn } from "$lib/store"
 
     /** @type {string} 페이지 제목 */

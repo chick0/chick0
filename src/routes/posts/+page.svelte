@@ -1,6 +1,6 @@
 <script>
-    import Intro from "$lib/page/Intro.svelte"
-    import Content from "$lib/page/Content.svelte"
+    import Intro from "$lib/component/Intro.svelte"
+    import Content from "$lib/component/Content.svelte"
     import { PostList } from "$lib/posts"
 </script>
 

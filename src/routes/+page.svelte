@@ -1,6 +1,6 @@
 <script>
     import Meta from "$lib/Meta.svelte"
-    import Section from "$lib/main/Section.svelte"
+    import Section from "$lib/component/Section.svelte"
 
     import bg_main from "$lib/assets/main/bg_main.jpg"
     import bg_paper_boat from "$lib/assets/main/bg_paperboat.jpg"
