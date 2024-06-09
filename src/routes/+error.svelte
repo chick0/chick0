@@ -2,7 +2,7 @@
     import { page } from "$app/stores"
     import Section from "$lib/component/Section.svelte"
 
-    import bg_main from "$lib/assets/main/bg_main.jpg"
+    import bg_main from "$lib/assets/banner/main.webp"
 </script>
 
 <Section

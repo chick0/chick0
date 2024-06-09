@@ -2,11 +2,11 @@
     import Meta from "$lib/Meta.svelte"
     import Section from "$lib/component/Section.svelte"
 
-    import bg_main from "$lib/assets/main/bg_main.jpg"
-    import bg_paper_boat from "$lib/assets/main/bg_paperboat.jpg"
-    import bg_festa from "$lib/assets/main/bg_dgf.jpg"
-    import bg_cat_tab from "$lib/assets/main/bg_cat-tab.jpg"
-    import bg_hja from "$lib/assets/main/bg_hja.jpg"
+    import bg_main from "$lib/assets/banner/main.webp"
+    import bg_paper_boat from "$lib/assets/banner/paper-boat.webp"
+    import bg_festa from "$lib/assets/banner/festa.webp"
+    import bg_cat_tab from "$lib/assets/banner/cat-tab.webp"
+    import bg_hja from "$lib/assets/banner/hard-archive.webp"
 
     /** `[더 읽어보기]` 링크 버튼 색상 */
     const POST_COLOR = "#3295eb"
@@ -124,6 +124,7 @@
     subtitle="아래 페이지에서 제 프로젝트를 소개하는 글을 확인할 수 있습니다."
     background="linear-gradient(90deg, rgba(207,157,178,1) 0%, rgba(131,163,201,1) 100%)"
     height="400px"
+    useFilterOptions={false}
     links={[
         {
             label: "글 확인하기",

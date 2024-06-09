@@ -20,6 +20,9 @@
     /** @type {String[]} 텍스트 내용들 */
     export let content = []
 
+    /** @type {boolean} 어둡게 & 블러 필터 적용 여부 */
+    export let useFilterOptions = true
+
     /**
      * @typedef Link 링크 정보
      * @property {string} label 표시 텍스트
@@ -42,8 +45,8 @@
     }
 </script>
 
-<div {id} class="section" style="--bg: {background}; --position: {position}; --height: {height}">
-    <div>
+<div {id} class="section" style="--position: {position}; --height: {height}">
+    <div class="content">
         <h1 class="title">{title}</h1>
         <p class="subtitle">{@html subtitle}</p>
 
@@ -69,19 +72,25 @@
     </div>
 </div>
 
+<div class="background" style="--bg: {background}; --position: {position}; --height: {height}">
+</div>
+
+{#if useFilterOptions}
+    <div class="filter" style="--height: {height}"></div>
+{/if}
+
 <style>
     .section {
         width: 100%;
         height: var(--height);
         color: #fff;
-
-        background: var(--bg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: var(--position);
     }
 
-    .section > div {
+    .section > .content {
+        z-index: 5;
+    }
+
+    .section > .content {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
@@ -94,15 +103,42 @@
     }
 
     @media (max-width: 768px) {
-        .section > div {
+        .section > .content {
             --padding: 10px;
         }
     }
 
     @media (min-width: 768px) and (max-width: 1200px) {
-        .section > div {
+        .section > .content {
             --padding: 50px;
         }
+    }
+
+    .background {
+        position: relative;
+        top: calc(var(--height) * -1);
+        margin-bottom: calc(var(--height) * -1);
+
+        width: 100%;
+        height: var(--height);
+
+        background: var(--bg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: var(--position);
+    }
+
+    .filter {
+        position: relative;
+        top: calc(var(--height) * -1);
+        margin-bottom: calc(var(--height) * -1);
+
+        width: 100%;
+        height: var(--height);
+
+        filter: brightness(0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     .title {

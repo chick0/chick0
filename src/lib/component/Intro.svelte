@@ -18,9 +18,12 @@
     /** @type {string} 페이지 인트로 섹션 높이 */
     export let height = "60vh"
 
+    /** @type {boolean} 어둡게 & 블러 필터 적용 여부 */
+    export let useFilterOptions = true
+
     PageReturn.set(returnTo)
 </script>
 
 <Meta {title} {description} {image} />
 
-<Section id="intro" {title} subtitle={description} background={image} {height} />
+<Section id="intro" {title} subtitle={description} background={image} {useFilterOptions} {height} />

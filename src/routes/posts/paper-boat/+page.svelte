@@ -5,7 +5,7 @@
     import Content from "$lib/component/Content.svelte"
     import Code from "$lib/component/Code.svelte"
 
-    import bg_paper_boat from "$lib/assets/main/bg_paperboat.jpg"
+    import bg_paper_boat from "$lib/assets/banner/paper-boat.webp"
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"
 
     onMount(() => {
