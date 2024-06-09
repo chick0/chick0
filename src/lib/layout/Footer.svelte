@@ -24,9 +24,12 @@
                 element.dataset.handler = "installed"
 
                 element.addEventListener("click", (e) => {
-                    // if (isPancakeOver) {
-                    //     return
-                    // }
+                    e.preventDefault()
+                    e.stopPropagation()
+
+                    if (isPancakeOver) {
+                        return
+                    }
 
                     /** @type {HTMLElement} */
                     // @ts-expect-error
