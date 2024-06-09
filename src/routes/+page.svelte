@@ -117,3 +117,18 @@
             icon: "fa-box-archive",
         },
     ]} />
+
+<Section
+    id="outro-post"
+    title="안녕하세요!"
+    subtitle="아래 페이지에서 제 프로젝트를 소개하는 글을 확인할 수 있습니다."
+    background="linear-gradient(90deg, rgba(207,157,178,1) 0%, rgba(131,163,201,1) 100%)"
+    height="40vh"
+    links={[
+        {
+            label: "글 확인하기",
+            src: "/posts",
+            color: POST_COLOR,
+            icon: POST_ICON,
+        },
+    ]} />
