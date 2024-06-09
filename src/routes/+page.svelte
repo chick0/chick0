@@ -7,6 +7,7 @@
     import bg_festa from "$lib/assets/banner/festa.webp"
     import bg_cat_tab from "$lib/assets/banner/cat-tab.webp"
     import bg_hja from "$lib/assets/banner/hard-archive.webp"
+    import Hint from "$lib/component/Hint.svelte"
 
     /** `[더 읽어보기]` 링크 버튼 색상 */
     const POST_COLOR = "#3295eb"
@@ -43,9 +44,7 @@
         },
     ]} />
 
-<div class="hint">
-    <a href={hintTo}><i class="fa fa-arrow-down"></i></a>
-</div>
+<Hint to={hintTo} />
 
 <Section
     id="paper-boat"
@@ -140,43 +139,3 @@
             icon: POST_ICON,
         },
     ]} />
-
-<style>
-    .hint {
-        --height: 120px;
-        height: 0;
-        width: 100%;
-
-        position: relative;
-        top: calc(var(--height) * -1);
-
-        text-align: center;
-    }
-
-    .hint a {
-        --background: rgba(0, 0, 0, 0.4);
-        --text: #fff;
-        /* animation: hint-bg-color 1.2s linear infinite; */
-
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-
-        border-radius: 50%;
-    }
-
-    .hint a > i {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* @keyframes hint-bg-color {
-        0% {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        100% {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-    } */
-</style>
