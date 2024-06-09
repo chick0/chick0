@@ -12,6 +12,9 @@ const config = {
             precompress: false,
             strict: true,
         }),
+        version: {
+            pollInterval: 30 * 1000,
+        },
     },
 }
 
