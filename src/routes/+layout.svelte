@@ -1,10 +1,11 @@
 <script>
     import { onMount } from "svelte"
-    import { navigating } from "$app/stores"
+    import { navigating, updated } from "$app/stores"
 
     import "$lib/css/base.css"
     import Spinner from "$lib/Spinner.svelte"
     import Footer from "$lib/layout/Footer.svelte"
+    import Box from "$lib/page/Box.svelte"
 
     /** 페이지 로딩 여부 */
     let isLoading = false
@@ -24,6 +25,12 @@
         }
     }
 
+    $: {
+        if ($updated == true) {
+            setTimeout(() => location.reload(), 500)
+        }
+    }
+
     onMount(() => {
         isMounted = true
     })
@@ -34,6 +41,12 @@
 {#if isLoading == true}
     <div class="loading">
         <Spinner />
+    </div>
+{/if}
+
+{#if $updated}
+    <div class="fixed-box-wrapper">
+        <Box type="info">웹 사이트가 업데이트되었습니다. 잠시만 기다려주세요...</Box>
     </div>
 {/if}
 
@@ -56,5 +69,14 @@
 
     :global(.locked-slot) {
         overflow: hidden !important;
+    }
+
+    .fixed-box-wrapper {
+        position: fixed;
+
+        top: 10px;
+        left: 10px;
+
+        z-index: 10;
     }
 </style>
