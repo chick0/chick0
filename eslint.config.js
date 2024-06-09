@@ -13,11 +13,11 @@ export default [
         languageOptions: {
             globals: {
                 ...globals.browser,
-                ...globals.node
-            }
-        }
+                ...globals.node,
+            },
+        },
     },
     {
-        ignores: ["build/", ".svelte-kit/", "dist/"]
-    }
+        ignores: ["build/", ".svelte-kit/", "dist/"],
+    },
 ]

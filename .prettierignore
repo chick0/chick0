@@ -9,3 +9,4 @@ README.md
 
 # Ignore for build result
 src/app.html
+static/*.html
