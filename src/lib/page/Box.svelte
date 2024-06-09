@@ -1,5 +1,5 @@
 <script>
-    /** @type {"info"|"warning"|"danger"} */
+    /** @type {"info"|"warning"|"danger"} 중요도 분류 */
     export let type
 </script>
 
@@ -18,6 +18,7 @@
 <style>
     .box {
         padding: 5px;
+        padding-right: 10px;
         margin-top: 5px;
         margin-bottom: 5px;
 
