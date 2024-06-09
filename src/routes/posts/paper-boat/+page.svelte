@@ -4,7 +4,6 @@
     import Intro from "$lib/page/Intro.svelte"
     import Content from "$lib/page/Content.svelte"
     import Code from "$lib/page/Code.svelte"
-    import Box from "$lib/page/Box.svelte"
 
     import bg_paper_boat from "$lib/assets/main/bg_paperboat.jpg"
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"
