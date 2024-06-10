@@ -1,27 +1,18 @@
 <script>
-    /** @type {String} 섹션 ID */
-    export let id
-
     /** @type {String} 제목 */
     export let title
 
     /** @type {String} 부제목 */
     export let subtitle = ""
 
-    /** @type {String} 배경 이미지 혹은 색상 */
-    export let background = "#1f1f1f"
-
-    /** @type {String} 섹션 높이 */
-    export let height = "100vh"
+    /** @type {string} 배경 이미지 */
+    export let background = ""
 
     /** @type {("center" | "left"| "right")} 배경 이미지 위치 */
     export let position = "center"
 
     /** @type {String[]} 텍스트 내용들 */
     export let content = []
-
-    /** @type {boolean} 어둡게 & 블러 필터 적용 여부 */
-    export let useFilterOptions = true
 
     /**
      * @typedef Link 링크 정보
@@ -45,20 +36,16 @@
     }
 </script>
 
-<div {id} class="section" style="--position: {position}; --height: {height}">
+<div class="plate" style="--background: {background}; --position: {position}">
     <div class="content">
-        <h1 class="title">{title}</h1>
-
-        {#if subtitle.length != 0}
-            <p class="subtitle">{@html subtitle}</p>
-        {/if}
+        <h2 class="title">{title}</h2>
+        <p class="subtitle">{@html subtitle}</p>
 
         {#each content as line}
             <p>{@html line}</p>
         {/each}
 
         {#if links.length != 0}
-            <br />
             <div class="group">
                 {#each links as link}
                     <a
@@ -73,59 +60,51 @@
             </div>
         {/if}
     </div>
-</div>
 
-<div class="background" style="--bg: {background}; --position: {position}; --height: {height}">
-</div>
+    <div class="background" style="--background: {background}; --position: {position}"></div>
 
-{#if useFilterOptions}
-    <div class="filter" style="--height: {height}"></div>
-{/if}
+    <div class="filter"></div>
+</div>
 
 <style>
-    .section {
-        width: 100%;
+    .plate {
+        --width: 320px;
+        --height: 480px;
+
+        width: var(--width);
         height: var(--height);
+
+        --padding: 20px;
+
+        flex-shrink: 0;
+    }
+
+    .content {
+        width: var(--width);
+        height: var(--height);
+        background: transparent;
+
+        position: relative;
+        top: 0;
+        z-index: 5;
+
+        padding: var(--padding);
+
         color: #fff;
     }
 
-    .section > .content {
-        z-index: 5;
-    }
-
-    .section > .content {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-
-        width: 100%;
-
-        --padding: 250px;
-        padding-left: var(--padding);
-        padding-right: var(--padding);
-    }
-
-    @media (max-width: 768px) {
-        .section > .content {
-            --padding: 10px;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1200px) {
-        .section > .content {
-            --padding: 50px;
-        }
-    }
-
     .background {
+        width: var(--width);
+        height: var(--height);
+        border-radius: 0.25em;
+
         position: relative;
         top: calc(var(--height) * -1);
         margin-bottom: calc(var(--height) * -1);
 
-        width: 100%;
-        height: var(--height);
+        box-shadow: 0px 0px 10px rgb(128, 128, 128, 1);
 
-        background: var(--bg);
+        background: var(--background);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: var(--position);
@@ -136,8 +115,9 @@
         top: calc(var(--height) * -1);
         margin-bottom: calc(var(--height) * -1);
 
-        width: 100%;
+        width: var(--width);
         height: var(--height);
+        border-radius: 0.25em;
 
         filter: brightness(0.4);
         backdrop-filter: blur(10px);
@@ -145,15 +125,12 @@
     }
 
     .title {
-        font-size: 45px;
+        margin-top: 0;
     }
 
-    .subtitle {
-        font-size: 22px;
-    }
-
-    /* icon margin */
-    .fa {
-        margin-right: 3px;
+    .group {
+        position: absolute;
+        left: var(--padding);
+        bottom: var(--padding);
     }
 </style>

@@ -1,14 +1,20 @@
 <script>
     import "$lib/css/content.css"
+
+    /** @type {string | null} */
+    export let id = null
+
+    /** @type {string} 최소 높이 (* 기본값: 100vh) */
+    export let height = "100vh"
 </script>
 
-<div class="page-content">
+<div {id} class="page-content" style="--height: {height}">
     <slot />
 </div>
 
 <style>
     .page-content {
-        min-height: 100vh;
+        min-height: var(--height);
         background-color: #fff;
 
         padding-top: 40px;
