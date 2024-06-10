@@ -23,16 +23,7 @@
     /** @type {boolean} 어둡게 & 블러 필터 적용 여부 */
     export let useFilterOptions = true
 
-    /**
-     * @typedef Link 링크 정보
-     * @property {string} label 표시 텍스트
-     * @property {string} src 링크 주소
-     * @property {string} color 버튼 배경 색상
-     * @property {string} [text] 버튼 텍스트 색상
-     * @property {string} [icon] 아이콘
-     */
-
-    /** @type {Link[]} 링크 목록 */
+    /** @type {import("$lib/posts").Link[]} 링크 목록 */
     export let links = []
 
     if (!background.startsWith("url(")) {
@@ -53,9 +44,13 @@
             <p class="subtitle">{@html subtitle}</p>
         {/if}
 
-        {#each content as line}
-            <p>{@html line}</p>
-        {/each}
+        {#if content.length == 0}
+            <slot />
+        {:else}
+            {#each content as line}
+                <p>{@html line}</p>
+            {/each}
+        {/if}
 
         {#if links.length != 0}
             <br />

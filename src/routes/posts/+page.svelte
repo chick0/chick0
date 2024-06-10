@@ -1,33 +1,56 @@
 <script>
-    import Intro from "$lib/component/Intro.svelte"
-    import Content from "$lib/component/Content.svelte"
     import { PostList } from "$lib/posts"
+    import TagWrapper from "$lib/component/TagWrapper.svelte"
+    import Tag from "$lib/component/Tag.svelte"
+
+    /**
+     * 렌더 대상 글의 주소를 가져옵니다.
+     *
+     * @param {import("$lib/posts").Post} post 렌더 대상 글
+     * @returns {string} 글의 주소
+     */
+    function getHref(post) {
+        if (post.hasPost) {
+            return `/posts/${post.id}`
+        }
+
+        return "#"
+    }
+
+    /**
+     * 클릭한 글이 준비되었는지 테스트합니다.
+     *
+     * @param {Event} event 클릭 이벤트
+     * @param {import("$lib/posts").Post} post 대상 글
+     * @returns {boolean} 해당 글의 준비 완료 여부
+     */
+    function onPostClicked(event, post) {
+        if (post.hasPost) {
+            return true
+        }
+
+        event.preventDefault()
+        event.stopPropagation()
+
+        alert("죄송합니다. 해당 글은 지금 준비중입니다.")
+        return false
+    }
 </script>
 
-<Intro
-    title="안녕하세요!"
-    description="이 페이지에서는 제 프로젝트를 소개하는 글을 확인할 수 있습니다."
-    image="linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)"
-    returnTo="/"
-    height="300px"
-    useFilterOptions={false} />
+{#each PostList as post}
+    <a id={post.id} href={getHref(post)} on:click={(event) => onPostClicked(event, post)}>
+        <div class="post-info" style="--color: {post.color}">
+            <h2>{post.title}</h2>
+            <p>{@html post.description}</p>
 
-<Content>
-    {#each PostList as post}
-        <a id={post.id} href="/posts/{post.id}">
-            <div class="post-info" style="--color: {post.color}">
-                <h2>{post.title}</h2>
-                <p>{post.description}</p>
-
-                <div class="tags">
-                    {#each post.tags as tag}
-                        <div class="tag"><i class="fa fa-tag"></i> {tag}</div>
-                    {/each}
-                </div>
-            </div>
-        </a>
-    {/each}
-</Content>
+            <TagWrapper>
+                {#each post.tags as tag}
+                    <Tag {tag} />
+                {/each}
+            </TagWrapper>
+        </div>
+    </a>
+{/each}
 
 <style>
     a {
@@ -50,21 +73,5 @@
     .post-info:hover h2,
     .post-info:focus h2 {
         text-decoration: underline;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 5px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-
-    .tag {
-        background: #000;
-        color: #fff;
-        padding-left: 5px;
-        padding-right: 5px;
-        border-radius: 0.25rem;
     }
 </style>

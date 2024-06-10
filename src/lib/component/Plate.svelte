@@ -14,16 +14,7 @@
     /** @type {String[]} 텍스트 내용들 */
     export let content = []
 
-    /**
-     * @typedef Link 링크 정보
-     * @property {string} label 표시 텍스트
-     * @property {string} src 링크 주소
-     * @property {string} color 버튼 배경 색상
-     * @property {string} [text] 버튼 텍스트 색상
-     * @property {string} [icon] 아이콘
-     */
-
-    /** @type {Link[]} 링크 목록 */
+    /** @type {import("$lib/posts").Link[]} 링크 목록 */
     export let links = []
 
     if (!background.startsWith("url(")) {

@@ -26,4 +26,6 @@
 
 <Meta {title} {description} {image} />
 
-<Section id="intro" {title} subtitle={description} background={image} {useFilterOptions} {height} />
+<Section id="intro" {title} subtitle={description} background={image} {useFilterOptions} {height}>
+    <slot />
+</Section>
