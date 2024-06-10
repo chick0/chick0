@@ -4,9 +4,13 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
-# README
-README.md
+# Ignore files for SvelteKit
+.svelte-kit/
 
 # Ignore for build result
 src/app.html
 static/*.html
+build/
+
+# README
+README.md
