@@ -16,7 +16,7 @@
     /** * @type {import("$lib/posts").Post | null} */
     let post
 
-    const re = /(\/posts[\/]?)$/g
+    const re = /(\/posts[/]?)$/g
 
     $: if (re.test($page.route.id ?? "")) {
         isPostMode = false
