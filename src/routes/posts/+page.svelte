@@ -1,7 +1,11 @@
 <script>
     import { PostList } from "$lib/posts"
+    import Box from "$lib/component/Box.svelte"
     import TagWrapper from "$lib/component/TagWrapper.svelte"
     import Tag from "$lib/component/Tag.svelte"
+
+    /** @type {string[]} 필터링 태그 목록 */
+    let filteredTagList = []
 
     /**
      * 렌더 대상 글의 주소를 가져옵니다.
@@ -37,6 +41,28 @@
     }
 
     /**
+     * @param {import("$lib/posts").Post} post
+     * @returns {boolean}
+     */
+    function testPostHasTag(post) {
+        for (let i = 0; i < filteredTagList.length; i++) {
+            let flag = false
+
+            for (let j = 0; j < post.tags.length; j++) {
+                if (filteredTagList[i] == post.tags[j]) {
+                    flag = true
+                }
+            }
+
+            if (!flag) {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    /**
      * @param {Event} event
      * @param {string} tag
      */
@@ -44,25 +70,60 @@
         event.preventDefault()
         event.stopPropagation()
 
-        alert("죄송합니다. 태그 선택 기능은 준비중입니다.")
+        if (filteredTagList.indexOf(tag) == -1) {
+            filteredTagList.push(tag)
+            filteredTagList = filteredTagList
+
+            setTimeout(() => {
+                location.replace("#_tag_filter")
+            }, 100)
+        }
+    }
+
+    /**
+     * @param {string} tag
+     */
+    function onFilteredTagClicked(tag) {
+        const index = filteredTagList.indexOf(tag)
+
+        if (index > -1) {
+            filteredTagList.splice(index, 1)
+            filteredTagList = filteredTagList
+        }
     }
 </script>
 
-{#each PostList as post}
-    <a id={post.id} href={getHref(post)} on:click={(event) => onPostClicked(event, post)}>
-        <div class="post-info" style="--color: {post.color}">
-            <h2>{post.title}</h2>
-            <p>{@html post.description}</p>
+{#if filteredTagList.length != 0}
+    <Box id="_tag_filter" type="no-style">
+        <p><b>{filteredTagList.length}개</b>의 필터를 적용했습니다.</p>
 
-            <TagWrapper>
-                {#each post.tags as tag}
-                    <button on:click={(event) => onTagClicked(event, tag)}>
-                        <Tag {tag} />
-                    </button>
-                {/each}
-            </TagWrapper>
-        </div>
-    </a>
+        <TagWrapper noPaddingBottom={true}>
+            {#each filteredTagList as tag}
+                <button on:click={() => onFilteredTagClicked(tag)}>
+                    <Tag {tag} />
+                </button>
+            {/each}
+        </TagWrapper>
+    </Box>
+{/if}
+
+{#each PostList as post}
+    {#if filteredTagList.length == 0 || testPostHasTag(post)}
+        <a id={post.id} href={getHref(post)} on:click={(event) => onPostClicked(event, post)}>
+            <div class="post-info" style="--color: {post.color}">
+                <h2>{post.title}</h2>
+                <p class="subtitle">{@html post.description}</p>
+
+                <TagWrapper>
+                    {#each post.tags as tag}
+                        <button on:click={(event) => onTagClicked(event, tag)}>
+                            <Tag {tag} />
+                        </button>
+                    {/each}
+                </TagWrapper>
+            </div>
+        </a>
+    {/if}
 {/each}
 
 <style>

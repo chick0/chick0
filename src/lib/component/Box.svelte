@@ -1,9 +1,12 @@
 <script>
-    /** @type {"info"|"warning"|"danger"} 중요도 분류 */
+    /** @type {string | null} */
+    export let id = null
+
+    /** @type {"info"|"warning"|"danger"|"no-style"} 중요도 분류 */
     export let type
 </script>
 
-<div class="box {type}">
+<div {id} class="box {type}">
     {#if type == "info"}
         <i class="fa fa-circle-info"></i>
     {:else if type == "warning"}
@@ -41,5 +44,9 @@
 
     .danger {
         background-color: #f19191;
+    }
+
+    .no-style {
+        padding: 10px;
     }
 </style>
