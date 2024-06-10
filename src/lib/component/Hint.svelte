@@ -6,7 +6,7 @@
     export let icon = "fa-arrow-down"
 
     /** @type {string} */
-    export let height = "120px"
+    export let height = "150px"
 </script>
 
 <div class="hint" style="--height: {height}">
@@ -27,7 +27,7 @@
     .hint a {
         --background: rgba(0, 0, 0, 0.4);
         --text: #fff;
-        /* animation: hint-bg-color 1.2s linear infinite; */
+        animation: hint-anim-frames 1.2s linear infinite;
 
         display: inline-block;
         height: 50px;
@@ -42,14 +42,15 @@
         transform: translateY(-50%);
     }
 
-    /*
-    @keyframes hint-bg-color {
+    @keyframes hint-anim-frames {
         0% {
-            background-color: rgba(0, 0, 0, 0.4);
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(5px);
         }
         100% {
-            background-color: rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
         }
-    } 
-    */
+    }
 </style>
