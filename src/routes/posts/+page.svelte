@@ -35,6 +35,17 @@
         alert("죄송합니다. 해당 글은 지금 준비중입니다.")
         return false
     }
+
+    /**
+     * @param {Event} event
+     * @param {string} tag
+     */
+    function onTagClicked(event, tag) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        alert("죄송합니다. 태그 선택 기능은 준비중입니다.")
+    }
 </script>
 
 {#each PostList as post}
@@ -45,7 +56,9 @@
 
             <TagWrapper>
                 {#each post.tags as tag}
-                    <Tag {tag} />
+                    <button on:click={(event) => onTagClicked(event, tag)}>
+                        <Tag {tag} />
+                    </button>
                 {/each}
             </TagWrapper>
         </div>
@@ -70,8 +83,15 @@
         border-left: var(--color) 5px solid;
     }
 
-    .post-info:hover h2,
-    .post-info:focus h2 {
+    .post-info:hover h2 {
         text-decoration: underline;
+    }
+
+    /* tag button */
+    button {
+        background: transparent;
+        border: transparent;
+        padding: 0;
+        cursor: pointer;
     }
 </style>
