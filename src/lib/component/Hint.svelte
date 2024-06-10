@@ -18,8 +18,8 @@
         height: 0;
         width: 100%;
 
-        position: relative;
-        top: calc(var(--height) * -1);
+        position: absolute;
+        top: calc(100vh - var(--height));
 
         text-align: center;
     }
