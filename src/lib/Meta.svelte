@@ -18,7 +18,7 @@
 
     if (re.test(image)) {
         image = "https://ch1ck.xyz/favicon.png"
-    } else {
+    } else if (!image.startsWith("http")) {
         image = PUBLIC_HOST + image
     }
 </script>
