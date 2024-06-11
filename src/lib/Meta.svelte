@@ -8,7 +8,7 @@
     export let description = "🥞"
 
     /** 미리보기 이미지 */
-    export let image = "https://ch1ck.xyz/favicon.png"
+    export let image = PUBLIC_HOST + "/favicon.png"
 
     /** 검색 키워드 `,`를 이용해 구분해주세요. */
     export let keywords = ""
@@ -17,7 +17,7 @@
     const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
 
     if (re.test(image)) {
-        image = "https://ch1ck.xyz/favicon.png"
+        image = PUBLIC_HOST + "/favicon.png"
     } else if (!image.startsWith("http")) {
         image = PUBLIC_HOST + image
     }
