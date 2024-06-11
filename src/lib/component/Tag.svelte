@@ -2,7 +2,7 @@
     export let tag
 </script>
 
-<div class="tag">
+<div class="tag" title={tag}>
     <i class="fa fa-tag"></i>
     {tag}
 </div>
