@@ -13,7 +13,7 @@
 <style>
     .tags {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: 5px;
     }
 
