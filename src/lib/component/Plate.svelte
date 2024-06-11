@@ -1,38 +1,34 @@
 <script>
-    /** @type {String} 제목 */
-    export let title
+    import { getPostBannerFromId } from "$lib/banner"
+    import { getLinkObject } from "$lib/posts"
 
-    /** @type {String} 부제목 */
-    export let subtitle = ""
+    /** @type {import("$lib/posts").Post} 글 정보 (* 프로젝트 정보) */
+    export let post
 
-    /** @type {string} 배경 이미지 */
-    export let background = ""
-
-    /** @type {("center" | "left"| "right")} 배경 이미지 위치 */
-    export let position = "center"
-
-    /** @type {String[]} 텍스트 내용들 */
-    export let content = []
+    /** @type {string} */
+    let background = "url(" + getPostBannerFromId(post.id) + ")"
 
     /** @type {import("$lib/posts").Link[]} 링크 목록 */
-    export let links = []
+    let links = post.preview.link
 
-    if (!background.startsWith("url(")) {
-        // 이미지 여부 검증 (* 일부 상황에서는 색상 코드 사용됨)
-        const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
+    // 글 읽어보기 링크가 필요하고
+    if (post.hasPost) {
+        const postUrl = `/posts/${post.id}`
 
-        if (!re.test(background)) {
-            background = `url(${background})`
+        // 포함되어 있지 않다면 추가하기
+        if (links.filter((link) => link.src == postUrl).length == 0) {
+            links.push(getLinkObject(postUrl))
+            links = links
         }
     }
 </script>
 
-<div class="plate" style="--background: {background}; --position: {position}">
+<div class="plate">
     <div class="content">
-        <h2 class="title">{title}</h2>
-        <p class="subtitle">{@html subtitle}</p>
+        <h2 class="title">{post.title}</h2>
+        <p class="subtitle">{@html post.preview.description}</p>
 
-        {#each content as line}
+        {#each post.preview.content as line}
             <p>{@html line}</p>
         {/each}
 
@@ -52,7 +48,8 @@
         {/if}
     </div>
 
-    <div class="background" style="--background: {background}; --position: {position}"></div>
+    <div class="background" style="--background: {background}; --position: {post.preview.position}">
+    </div>
 
     <div class="filter"></div>
 </div>

@@ -1,6 +1,5 @@
 <script>
-    import { getPostBannerFromId } from "$lib/banner"
-    import { POST_COLOR, POST_ICON, PostList } from "$lib/posts"
+    import { getLinkObject, PostList } from "$lib/posts"
 
     import Meta from "$lib/Meta.svelte"
     import Section from "$lib/component/Section.svelte"
@@ -43,13 +42,7 @@
     <PlateWrapper>
         {#each PostList as post}
             {#if post.preview != null}
-                <Plate
-                    title={post.title}
-                    subtitle={post.preview.description}
-                    background={getPostBannerFromId(post.id)}
-                    content={post.preview.content}
-                    position={post.preview.position}
-                    links={post.preview.link} />
+                <Plate {post} />
             {/if}
         {/each}
     </PlateWrapper>
@@ -62,11 +55,4 @@
     background="linear-gradient(90deg, rgba(207,157,178,1) 0%, rgba(131,163,201,1) 100%)"
     height="400px"
     useFilterOptions={false}
-    links={[
-        {
-            label: "글 확인하기",
-            src: "/posts",
-            color: POST_COLOR,
-            icon: POST_ICON,
-        },
-    ]} />
+    links={[getLinkObject("/posts", "글 확인하기")]} />

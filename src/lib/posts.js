@@ -6,7 +6,7 @@
  * @property {boolean} hasPost 글 준비여부
  * @property {string[]} tags 태그
  * @property {string} color 상징 색상
- * @property {Preview | null} preview 미리보기 정보
+ * @property {Preview} preview 미리보기 정보
  */
 
 /**
@@ -26,11 +26,23 @@
  * @property {Link[]} link
  */
 
-/** `[더 읽어보기]` 링크 버튼 색상 */
-export const POST_COLOR = "#4399fe"
+/**
+ * @param {string} url
+ * @param {string | null} label
+ * @returns {Link}
+ */
+export function getLinkObject(url, label = null) {
+    if (label == null || label.length == 0) {
+        label = "더 읽어보기"
+    }
 
-/** `[더 읽어보기]` 링크 버튼 아이콘 */
-export const POST_ICON = "fa-book"
+    return {
+        label: label,
+        src: url,
+        color: "#4399fe",
+        icon: "fa-book",
+    }
+}
 
 /**
  * @type {Post[]} 프로젝트 글 목록 정보
@@ -50,29 +62,19 @@ export const PostList = [
                 "해당 게임의 기본 구조 및 인게임 플레이 과정을 제작했습니다.",
             ],
             position: "center",
-            link: [
-                {
-                    label: "더 읽어보기",
-                    src: "/posts/paper-boat",
-                    color: POST_COLOR,
-                    icon: POST_ICON,
-                },
-            ],
+            link: [],
         },
     },
     {
         id: "festa",
-        title: "DJMAX FESTA",
-        description: "DJMAX RESPECT V <u>비공식</u> 유저 대회 DJMAX FESTA 스태프로 참여했습니다.",
+        title: "FESTA",
+        description: "게임 DJMAX RESPECT V의 <u>비공식</u> 유저 대회의 스태프로 참여했습니다.",
         hasPost: false,
         tags: ["JavaScript", "Python", "Unity", "C#"],
         color: "#f3e61b",
         preview: {
-            description: "<u>비공식</u> 유저 대회 DJMAX FESTA 스태프 참여",
-            content: [
-                "대회 참가 및 온라인 예선을 진행하기 위한 웹 사이트를 제작하였습니다.",
-                "또한 방송 진행을 위해 참가자 정보 표시 오버레이 및 랜덤 룰렛을 제작하였습니다.",
-            ],
+            description: "<u>비공식</u> 유저 대회 스태프 참여",
+            content: ["대회 참가 및 온라인 예선을 진행하기 위한 웹 사이트를 제작했습니다."],
             position: "center",
             link: [
                 {
@@ -100,7 +102,7 @@ export const PostList = [
         color: "#ffcc4d",
         preview: {
             description: "새 탭에서 고양이 사진을 보여주는 확장 프로그램 제작",
-            content: [],
+            content: ["자바스크립트 연습 및 웹 확장 프로그램 구조를 알아보기 위해 제작했습니다."],
             position: "center",
             link: [
                 {
@@ -127,7 +129,9 @@ export const PostList = [
         color: "#de4846",
         preview: {
             description: "DJMAX RESPECT V <u>비공식</u> 랭킹 페이지 제작",
-            content: [],
+            content: [
+                "게임 DJMAX RESPECT V의 <u>비공식</u> 하드 판정 및 맥스 판정 모드의 랭킹 페이지를 제작했습니다.",
+            ],
             position: "left",
             link: [
                 {
