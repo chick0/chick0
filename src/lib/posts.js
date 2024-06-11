@@ -65,7 +65,7 @@ export const PostList = [
         title: "DJMAX FESTA",
         description: "DJMAX RESPECT V <u>비공식</u> 유저 대회 DJMAX FESTA 스태프로 참여했습니다.",
         hasPost: false,
-        tags: ["Game", "Web", "JavaScript", "Python", "Unity", "C#"],
+        tags: ["JavaScript", "Python", "Unity", "C#"],
         color: "#f3e61b",
         preview: {
             description: "<u>비공식</u> 유저 대회 DJMAX FESTA 스태프 참여",
@@ -123,7 +123,7 @@ export const PostList = [
         title: "전일 아카이브",
         description: "DJMAX RESPECT V <u>비공식</u> 기록 저장 및 랭킹 페이지를 제작했습니다.",
         hasPost: false,
-        tags: ["Game", "Web", "JavaScript", "Python"],
+        tags: ["JavaScript", "Python"],
         color: "#de4846",
         preview: {
             description: "DJMAX RESPECT V <u>비공식</u> 랭킹 페이지 제작",
