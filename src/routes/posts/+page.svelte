@@ -112,7 +112,7 @@
         <a id={post.id} href={getHref(post)} on:click={(event) => onPostClicked(event, post)}>
             <div class="post-info" style="--color: {post.color}">
                 <h2>{post.title}</h2>
-                <p class="subtitle">{@html post.description}</p>
+                <p class="description">{@html post.description}</p>
 
                 <TagWrapper>
                     {#each post.tags as tag}
@@ -154,5 +154,9 @@
         border: transparent;
         padding: 0;
         cursor: pointer;
+    }
+
+    .description {
+        margin-top: -20px;
     }
 </style>
