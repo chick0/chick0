@@ -62,7 +62,7 @@
         width: var(--width);
         height: var(--height);
 
-        --padding: 20px;
+        --plate-padding: 20px;
 
         flex-shrink: 0;
     }
@@ -76,7 +76,7 @@
         top: 0;
         z-index: 5;
 
-        padding: var(--padding);
+        padding: var(--plate-padding);
 
         color: #fff;
     }
@@ -126,7 +126,7 @@
 
     .group {
         position: absolute;
-        left: var(--padding);
-        bottom: var(--padding);
+        left: var(--plate-padding);
+        bottom: var(--plate-padding);
     }
 </style>

@@ -48,16 +48,3 @@
 .page-content li {
     margin-left: 25px;
 }
-
-/* content-group */
-.page-content .content-group {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-}
-
-@media (max-width: 768px) {
-    .page-content .content-group {
-        display: block;
-    }
-}

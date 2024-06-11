@@ -1,17 +1,11 @@
 <script>
-    import { onMount } from "svelte"
-    import { highlightAll } from "$lib/hljs"
-
     import Code from "$lib/component/Code.svelte"
+    import ContentGroup from "$lib/component/ContentGroup.svelte"
 
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"
-
-    onMount(() => {
-        highlightAll()
-    })
 </script>
 
-<h2>프로젝트 소개</h2>
+<h1>프로젝트 소개</h1>
 
 <p>
     2022년 개최된 <b>청강 하이! 게임잼</b>에 참가해 제작한 게임입니다. 참가팀은 기획 1명, 그래픽
@@ -21,7 +15,7 @@
 
 <hr />
 
-<h2>게임 소개</h2>
+<h1>게임 소개</h1>
 
 <iframe
     src="https://www.youtube-nocookie.com/embed/K9PnKPkjFZ4"
@@ -84,7 +78,7 @@ Vector3 GenPostion()
 <p>이후 선택된 좌표에 몇가지 검사를 통해 해당 위치의 사용 가능 여부를 검증합니다.</p>
 <br />
 
-<div class="content-group">
+<ContentGroup>
     <div>
         <img src={example_obstacle_img} loading="lazy" alt="장애물 위치 검증 과정 설명" />
     </div>
@@ -104,7 +98,7 @@ Vector3 GenPostion()
         <br />
         <p>위 검증 과정이 끝났다면, 해당 위치에 장애물을 생성합니다.</p>
     </div>
-</div>
+</ContentGroup>
 
 <hr />
 

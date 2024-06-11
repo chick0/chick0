@@ -20,20 +20,20 @@
         padding-top: 40px;
         padding-bottom: 40px;
 
-        --padding: 250px;
-        padding-left: var(--padding);
-        padding-right: var(--padding);
+        --content-padding: 250px;
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
     }
 
     @media (max-width: 768px) {
         .page-content {
-            --padding: 10px;
+            --content-padding: 10px;
         }
     }
 
     @media (min-width: 768px) and (max-width: 1200px) {
         .page-content {
-            --padding: 50px;
+            --content-padding: 50px;
         }
     }
 </style>

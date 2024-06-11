@@ -95,20 +95,20 @@
 
         width: 100%;
 
-        --padding: 250px;
-        padding-left: var(--padding);
-        padding-right: var(--padding);
+        --section-padding: 250px;
+        padding-left: var(--section-padding);
+        padding-right: var(--section-padding);
     }
 
     @media (max-width: 768px) {
         .section > .content {
-            --padding: 10px;
+            --section-padding: 10px;
         }
     }
 
     @media (min-width: 768px) and (max-width: 1200px) {
         .section > .content {
-            --padding: 50px;
+            --section-padding: 50px;
         }
     }
 

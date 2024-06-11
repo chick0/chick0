@@ -68,12 +68,12 @@ export const PostList = [
     {
         id: "festa",
         title: "FESTA",
-        description: "게임 DJMAX RESPECT V의 <u>비공식</u> 유저 대회의 스태프로 참여했습니다.",
-        hasPost: false,
+        description: "대회 참가 및 온라인 예선을 진행하기 위한 웹 사이트를 제작했습니다.",
+        hasPost: true,
         tags: ["JavaScript", "Python", "Unity", "C#"],
         color: "#f3e61b",
         preview: {
-            description: "<u>비공식</u> 유저 대회 스태프 참여",
+            description: "<u>비공식</u> 유저 대회 제작 참여",
             content: ["대회 참가 및 온라인 예선을 진행하기 위한 웹 사이트를 제작했습니다."],
             position: "center",
             link: [
@@ -84,12 +84,12 @@ export const PostList = [
                     text: "#000",
                     icon: "fa-crown",
                 },
-                {
-                    label: "YouTube 다시보기",
-                    src: "https://www.youtube.com/@DJMAX_FESTA/videos",
-                    color: "#ff0000",
-                    icon: "fa-brands fa-youtube",
-                },
+                // {
+                //     label: "YouTube 다시보기",
+                //     src: "https://www.youtube.com/@DJMAX_FESTA/videos",
+                //     color: "#ff0000",
+                //     icon: "fa-brands fa-youtube",
+                // },
             ],
         },
     },
@@ -128,7 +128,7 @@ export const PostList = [
         tags: ["JavaScript", "Python"],
         color: "#de4846",
         preview: {
-            description: "DJMAX RESPECT V <u>비공식</u> 랭킹 페이지 제작",
+            description: "<u>비공식</u> 랭킹 페이지 제작",
             content: [
                 "게임 DJMAX RESPECT V의 <u>비공식</u> 하드 판정 및 맥스 판정 모드의 랭킹 페이지를 제작했습니다.",
             ],
