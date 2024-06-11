@@ -62,7 +62,11 @@
 </a>
 
 {#if isPostMode && post != null}
-    <Intro title={post.title} description={post.description} image={getPostBannerFromId(post.id)}>
+    <Intro
+        title={post.title}
+        description={post.description}
+        tags={post.tags.join(",")}
+        image={getPostBannerFromId(post.id)}>
         <TagWrapper>
             {#each post.tags as tag}
                 <Tag {tag} />

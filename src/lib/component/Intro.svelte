@@ -9,6 +9,9 @@
     /** @type {string} 페이지 설명 */
     export let description
 
+    /** @type {string} meta tag */
+    export let tags = ""
+
     /** @type {string} 이미지 */
     export let image
 
@@ -24,7 +27,7 @@
     PageReturn.set(returnTo)
 </script>
 
-<Meta {title} {description} {image} />
+<Meta {title} {description} {image} keywords={tags} />
 
 <Section id="intro" {title} subtitle={description} background={image} {useFilterOptions} {height}>
     <slot />
