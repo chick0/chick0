@@ -143,7 +143,8 @@
         font-size: 45px;
     }
 
-    .subtitle {
+    .subtitle,
+    .subtitle :global(*) {
         font-size: 22px;
     }
 
