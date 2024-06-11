@@ -4,9 +4,9 @@
 
 <style>
     .plate-wrapper {
-        --gap: 20px;
+        --plate-gap: 20px;
         display: flex;
-        gap: var(--gap);
+        gap: var(--plate-gap);
 
         padding: 10px;
         overflow-x: auto;

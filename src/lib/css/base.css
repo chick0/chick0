@@ -40,18 +40,9 @@ a:focus {
 }
 
 .group {
+    --group-gap: 5px;
+
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-}
-
-.title {
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    margin-top: -20px;
-    margin-bottom: 20px;
+    gap: var(--group-gap);
 }

@@ -113,7 +113,15 @@
     }
 
     .title {
+        font-weight: bold;
+
         margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        margin-top: -20px;
+        margin-bottom: 20px;
     }
 
     .group {
