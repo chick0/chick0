@@ -85,7 +85,7 @@
     {#if isTweetEmbedReady == false}
         <div class="tweet-fallback">
             <a href="https://x.com/{user}/status/{id}" target="_blank" referrerpolicy="no-referrer">
-                <i class="fa fa-brands fa-x-twitter"></i> Read from x (formerly Twitter)
+                <i class="fa fa-brands fa-x-twitter"></i> Read more on X (formerly Twitter)
             </a>
         </div>
     {/if}
