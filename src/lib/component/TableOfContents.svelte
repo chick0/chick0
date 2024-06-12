@@ -14,6 +14,13 @@
 
         let result = heading.text.replace(" ", "-")
 
+        if (!heading.node.classList.contains("js-heading-back")) {
+            heading.node.classList.add("js-heading-back")
+            heading.node.addEventListener("click", () => {
+                location.replace("#toc")
+            })
+        }
+
         if (document.getElementById(result) != null) {
             result = index.toString()
         }
@@ -72,5 +79,9 @@
 
     .heading-3 {
         --heading: 40px;
+    }
+
+    :global(.js-heading-back):hover {
+        cursor: pointer;
     }
 </style>
