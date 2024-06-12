@@ -8,9 +8,10 @@ yarn.lock
 .svelte-kit/
 
 # Ignore for build result
+build/
 src/app.html
 static/*.html
-build/
+static/**/*.html
 
 # README
 README.md

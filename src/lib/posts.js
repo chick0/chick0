@@ -156,7 +156,7 @@ export const PostList = [
         title: "전일 아카이브",
         description: "DJMAX RESPECT V <u>비공식</u> 기록 저장 및 랭킹 페이지를 제작했습니다.",
         date: "2023-08-24",
-        hasPost: false,
+        hasPost: true,
         tags: ["JavaScript", "Python"],
         color: "#de4846",
         preview: {
