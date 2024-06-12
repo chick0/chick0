@@ -9,7 +9,7 @@
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
         "lint": "prettier --check . && eslint .",
         "lint:write": "prettier --write .",
-        "create": "node create.mjs"
+        "posts": "node posts.mjs"
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.1",
