@@ -1,8 +1,9 @@
 <script>
-    import { onMount } from "svelte"
+    import { onDestroy, onMount } from "svelte"
     import TableOfContents from "./TableOfContents.svelte"
 
     import "$lib/css/content.css"
+    import { RefreshTableOfContents } from "$lib/store"
 
     /** @type {string | null} */
     export let id = null
@@ -18,6 +19,9 @@
 
     /** @type {import("$lib/types/Heading").Heading[]} */
     let headingList = []
+
+    /** @type {function|null} */
+    let unsubscriber = null
 
     /**
      * @param {string} nodeName
@@ -42,17 +46,35 @@
         }
     }
 
+    function scanTableOfContents() {
+        headingList = []
+        wrapper.querySelectorAll("h1, h2, h3").forEach((heading) => {
+            headingList.push({
+                level: getLevelFromNodeName(heading.nodeName),
+                text: heading.textContent ?? "",
+                node: heading,
+            })
+        })
+
+        headingList = headingList
+    }
+
     if (useTableOfContents) {
         onMount(() => {
-            wrapper.querySelectorAll("h1, h2, h3").forEach((heading) => {
-                headingList.push({
-                    level: getLevelFromNodeName(heading.nodeName),
-                    text: heading.textContent ?? "",
-                    node: heading,
-                })
-            })
+            scanTableOfContents()
 
-            headingList = headingList
+            unsubscriber = RefreshTableOfContents.subscribe((value) => {
+                if (value) {
+                    scanTableOfContents()
+                    RefreshTableOfContents.set(false)
+                }
+            })
+        })
+
+        onDestroy(() => {
+            if (unsubscriber != null) {
+                unsubscriber()
+            }
         })
     }
 </script>

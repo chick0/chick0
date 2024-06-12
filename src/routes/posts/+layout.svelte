@@ -1,7 +1,7 @@
 <script>
-    import { onMount } from "svelte"
+    import { onDestroy, onMount } from "svelte"
     import { page } from "$app/stores"
-    import { PageReturn } from "$lib/store"
+    import { PageReturn, RefreshTableOfContents } from "$lib/store"
     import { PostList, getPostDate } from "$lib/posts"
     import { getPostBannerFromId } from "$lib/banner"
 
@@ -18,15 +18,27 @@
 
     const re = /(\/posts[/]?)$/g
 
-    $: if (re.test($page.route.id ?? "")) {
-        isPostMode = false
-    } else {
-        getPostId()
-        isPostMode = true
-    }
+    /** @type {function|null} */
+    let unsubscriber = null
 
     onMount(() => {
         isReady = true
+    })
+
+    onDestroy(() => {
+        if (unsubscriber != null) {
+            unsubscriber()
+        }
+    })
+
+    unsubscriber = page.subscribe((e) => {
+        if (re.test(e.route.id ?? "")) {
+            isPostMode = false
+        } else {
+            getPostId()
+            isPostMode = true
+            RefreshTableOfContents.set(true)
+        }
     })
 
     function getPostId() {
