@@ -87,7 +87,7 @@
         useFilterOptions={false} />
 {/if}
 
-<Content>
+<Content useTableOfContents={isPostMode}>
     <slot />
 </Content>
 
