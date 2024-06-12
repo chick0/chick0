@@ -2,7 +2,7 @@
     import { onMount } from "svelte"
     import { page } from "$app/stores"
     import { PageReturn } from "$lib/store"
-    import { PostList } from "$lib/posts"
+    import { PostList, getPostDate } from "$lib/posts"
     import { getPostBannerFromId } from "$lib/banner"
 
     import Intro from "$lib/component/Intro.svelte"
@@ -67,6 +67,10 @@
         description={post.description}
         tags={post.tags.join(",")}
         image={getPostBannerFromId(post.id)}>
+        <p>
+            <i class="fa fa-calendar-days"></i>&nbsp;&nbsp;{getPostDate(post).toLocaleDateString()}
+        </p>
+
         <TagWrapper>
             {#each post.tags as tag}
                 <Tag {tag} />
