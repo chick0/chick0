@@ -9,7 +9,7 @@
     let background = "url(" + getPostBannerFromId(post.id) + ")"
 
     /** @type {import("$lib/posts").Link[]} 링크 목록 */
-    let links = post.preview.link
+    let links = post.preview?.link ?? []
 
     // 글 읽어보기 링크가 필요하고
     if (post.hasPost) {
@@ -26,11 +26,14 @@
 <div class="plate">
     <div class="content">
         <h2 class="title">{post.title}</h2>
-        <p class="subtitle">{@html post.preview.description}</p>
 
-        {#each post.preview.content as line}
-            <p>{@html line}</p>
-        {/each}
+        {#if post.preview != null}
+            <p class="subtitle">{@html post.preview.description}</p>
+
+            {#each post.preview.content as line}
+                <p>{@html line}</p>
+            {/each}
+        {/if}
 
         {#if links.length != 0}
             <div class="group">
@@ -48,7 +51,9 @@
         {/if}
     </div>
 
-    <div class="background" style="--background: {background}; --position: {post.preview.position}">
+    <div
+        class="background"
+        style="--background: {background}; --position: {post.preview?.position ?? 'center'}">
     </div>
 
     <div class="filter"></div>
