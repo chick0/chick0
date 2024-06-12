@@ -12,6 +12,6 @@ PostList.forEach((post) => {
             mkdirSync(path)
         }
 
-        writeFileSync(file, "\n")
+        writeFileSync(file, "")
     }
 })
