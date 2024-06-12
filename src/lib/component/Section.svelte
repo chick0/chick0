@@ -26,7 +26,7 @@
     /** @type {import("$lib/posts").Link[]} 링크 목록 */
     export let links = []
 
-    if (!background.startsWith("url(")) {
+    $: if (!background.startsWith("url(")) {
         // 이미지 여부 검증 (* 일부 상황에서는 색상 코드 사용됨)
         const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
 
