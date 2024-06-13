@@ -1,7 +1,7 @@
 <script>
-    import { onDestroy, onMount } from "svelte"
+    import { onDestroy } from "svelte"
     import { page } from "$app/stores"
-    import { PageReturn, RefreshTableOfContents } from "$lib/store"
+    import { RefreshTableOfContents } from "$lib/store"
     import { PostList, getPostDate } from "$lib/posts"
     import { getPostBannerFromId } from "$lib/banner"
 
@@ -10,7 +10,6 @@
     import TagWrapper from "$lib/component/TagWrapper.svelte"
     import Tag from "$lib/component/Tag.svelte"
 
-    let isReady = false
     let isPostMode = false
 
     /** * @type {import("$lib/posts").Post | null} */
@@ -20,10 +19,6 @@
 
     /** @type {function|null} */
     let unsubscriber = null
-
-    onMount(() => {
-        isReady = true
-    })
 
     onDestroy(() => {
         if (unsubscriber != null) {
@@ -69,10 +64,6 @@
     }
 </script>
 
-<a class="return {isReady ? 'ready' : ''}" href={$PageReturn}>
-    <i class="fa fa-arrow-left"></i>
-</a>
-
 {#if isPostMode && post != null}
     <Intro
         title={post.title}
@@ -102,44 +93,3 @@
 <Content useTableOfContents={isPostMode}>
     <slot />
 </Content>
-
-<style>
-    .return {
-        position: fixed;
-        --pos: 30px;
-        top: var(--pos);
-        left: var(--pos);
-        z-index: 10;
-
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.5);
-
-        border: 0;
-        border-radius: 50%;
-
-        width: 50px;
-        height: 50px;
-    }
-
-    @media (max-width: 768px) {
-        .return {
-            --pos: 10px;
-        }
-    }
-
-    .return i {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .return:not(.ready) {
-        opacity: 0;
-    }
-
-    .return.ready {
-        opacity: 1;
-        transition: 0.5s ease-out;
-    }
-</style>
