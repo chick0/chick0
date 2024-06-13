@@ -113,4 +113,15 @@
             --content-padding: 50px;
         }
     }
+
+    .page-content :global(a) {
+        --background: transparent;
+        --text: #0772fd;
+        padding: 0;
+    }
+
+    .page-content :global(a:hover),
+    .page-content :global(a:focus) {
+        text-decoration: var(--text) 2px underline;
+    }
 </style>
