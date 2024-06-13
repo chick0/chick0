@@ -9,7 +9,7 @@
         gap: 30px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
         .content-group {
             display: block;
         }
