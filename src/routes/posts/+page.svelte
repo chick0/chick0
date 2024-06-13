@@ -129,23 +129,21 @@
 <style>
     a {
         --background: transpert;
-        --text: #000;
+        --text: #000 !important;
         display: block;
         padding: 0;
+
+        text-decoration: none !important;
     }
 
     a:hover,
     a:focus {
-        --background: rgba(0, 0, 0, 0.05);
+        --background: rgba(0, 0, 0, 0.05) !important;
     }
 
     .post-info {
         padding-left: 10px;
         border-left: var(--color) 5px solid;
-    }
-
-    .post-info:hover h2 {
-        text-decoration: underline;
     }
 
     /* tag button */
