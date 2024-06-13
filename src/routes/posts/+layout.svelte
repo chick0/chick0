@@ -15,8 +15,6 @@
     /** * @type {import("$lib/posts").Post | null} */
     let post
 
-    const re = /(\/posts[/]?)$/g
-
     /** @type {function|null} */
     let unsubscriber = null
 
@@ -27,7 +25,9 @@
     })
 
     unsubscriber = page.subscribe((e) => {
-        if (re.test(e.route.id ?? "")) {
+        const routeId = e?.route?.id ?? ""
+
+        if (routeId == "/posts" || routeId == "/posts/") {
             isPostMode = false
         } else {
             getPostId()
