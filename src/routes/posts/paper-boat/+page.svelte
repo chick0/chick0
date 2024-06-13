@@ -1,6 +1,7 @@
 <script>
-    import Code from "$lib/component/props/Code.svelte"
     import ContentGroup from "$lib/component/ContentGroup.svelte"
+    import Image from "$lib/component/props/Image.svelte"
+    import Code from "$lib/component/props/Code.svelte"
 
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"
 </script>
@@ -79,9 +80,7 @@ Vector3 GenPostion()
 <br />
 
 <ContentGroup>
-    <div>
-        <img src={example_obstacle_img} loading="lazy" alt="장애물 위치 검증 과정 설명" />
-    </div>
+    <Image src={example_obstacle_img} alt="장애물 위치 검증 과정 설명" />
     <div>
         <p>예시 이미지와 같이 가상의 빨간 원을 그립니다.</p>
         <p>빨간 원의 반지름은 기기 화면의 넓이와 높이중 큰 값을 선택합니다.</p>

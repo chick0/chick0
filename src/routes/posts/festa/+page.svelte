@@ -1,5 +1,6 @@
 <script>
     import ContentGroup from "$lib/component/ContentGroup.svelte"
+    import Image from "$lib/component/props/Image.svelte"
     import Code from "$lib/component/props/Code.svelte"
     import Tweet from "$lib/component/props/Tweet.svelte"
 
@@ -27,9 +28,7 @@
 
 <h2>참가 신청</h2>
 
-<div>
-    <img src={imgForm} alt="참가 신청서 예시 이미지" width="500px" />
-</div>
+<Image src={imgForm} alt="참가 신청서 예시 이미지" maxWidth="500px" />
 
 <p>대회 참여자는 사이트에 로그인하면 신청서에 입력한 정보를 자유롭게 확인 및 수정할 수 있습니다.</p>
 
@@ -59,9 +58,7 @@
 <h2>상품 등록 및 수령 신청</h2>
 
 <ContentGroup>
-    <div>
-        <img src={imgTier} alt="상품 티어(분류) 관리 페이지 스크린샷" />
-    </div>
+    <Image src={imgTier} alt="상품 티어(분류) 관리 페이지 스크린샷" maxWidth="400px" />
     <div>
         <p>
             우선 참가자의 최종 등수 및 당첨된 이벤트에 따라 선택할 수 있는 상품의 종류가 달랐습니다.
@@ -78,9 +75,7 @@
 <hr />
 
 <ContentGroup>
-    <div>
-        <img src={imgItem} alt="상품 관리 페이지 스크린샷" />
-    </div>
+    <Image src={imgItem} alt="상품 관리 페이지 스크린샷" maxWidth="400px" />
     <div>
         <p>관리 UI에서는 상품의 기본 정보를 입력할 수 있습니다. (이름 및 설명)</p>
 
@@ -120,9 +115,7 @@
 <hr />
 
 <ContentGroup>
-    <div>
-        <img src={imgPick} alt="상품 선택 페이지 스크린샷" />
-    </div>
+    <Image src={imgPick} alt="상품 선택 페이지 스크린샷" />
     <div>
         <p>상품 선택 화면은 다음과 같이 제작했습니다.</p>
         <br />
