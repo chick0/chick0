@@ -2,8 +2,8 @@
     import Content from "$lib/component/Content.svelte"
     import ContentGroup from "$lib/component/ContentGroup.svelte"
 
-    let result = "READY"
     let command = ""
+    let result = "READY"
 </script>
 
 <Content>
@@ -13,6 +13,10 @@
             on:click={() => {
                 try {
                     result = JSON.stringify(eval(command))
+
+                    if (result == "null") {
+                        result = eval(command).toString()
+                    }
                 } catch (e) {
                     // @ts-ignore
                     result = e.toString()
