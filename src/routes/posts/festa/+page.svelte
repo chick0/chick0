@@ -1,7 +1,7 @@
 <script>
     import ContentGroup from "$lib/component/ContentGroup.svelte"
-    import Code from "$lib/component/Code.svelte"
-    import Tweet from "$lib/component/Tweet.svelte"
+    import Code from "$lib/component/props/Code.svelte"
+    import Tweet from "$lib/component/props/Tweet.svelte"
 
     import imgForm from "$lib/assets/post/festa/Form.png"
     import imgTier from "$lib/assets/post/festa/Tier.png"

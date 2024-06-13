@@ -4,9 +4,9 @@
     import { PageReturn } from "$lib/store"
 
     import "$lib/css/base.css"
-    import Spinner from "$lib/component/Spinner.svelte"
-    import Footer from "$lib/component/Footer.svelte"
-    import Box from "$lib/component/Box.svelte"
+    import Spinner from "$lib/component/props/Spinner.svelte"
+    import Footer from "$lib/component/layout/Footer.svelte"
+    import Box from "$lib/component/props/Box.svelte"
 
     /** 페이지 로딩 여부 */
     let isLoading = false
@@ -37,8 +37,6 @@
 
     /** @type {function|null} */
     let unsubscriber = page.subscribe((value) => {
-        console.log(value)
-
         if (value.route.id == "/") {
             needReturnButton = false
         } else {

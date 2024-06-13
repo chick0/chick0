@@ -1,6 +1,6 @@
 <script>
     import { PostList } from "$lib/posts"
-    import Box from "$lib/component/Box.svelte"
+    import Box from "$lib/component/props/Box.svelte"
     import TagWrapper from "$lib/component/TagWrapper.svelte"
     import Tag from "$lib/component/Tag.svelte"
 

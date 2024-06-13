@@ -1,5 +1,5 @@
 <script>
-    import Code from "$lib/component/Code.svelte"
+    import Code from "$lib/component/props/Code.svelte"
     import ContentGroup from "$lib/component/ContentGroup.svelte"
 
     import example_obstacle_img from "$lib/assets/post/paper-boat/obstacle.png"

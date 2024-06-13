@@ -1,6 +1,6 @@
 <script>
     import { onDestroy, onMount } from "svelte"
-    import TableOfContents from "./TableOfContents.svelte"
+    import TableOfContents from "$lib/component/TableOfContents.svelte"
 
     import "$lib/css/content.css"
     import { RefreshTableOfContents } from "$lib/store"
