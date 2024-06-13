@@ -27,14 +27,18 @@
  * @property {Link[]} link
  */
 
-const TimeZone = "GMT+9"
+const defaultTime = "T00:00:00+09:00"
 
 /**
  * @param {Post} post
  * @returns {Date}
  */
 export function getPostDate(post) {
-    return new Date(post.date + " " + TimeZone)
+    if (post.date.includes("T")) {
+        return new Date(post.date)
+    } else {
+        return new Date(post.date + defaultTime)
+    }
 }
 
 /**
