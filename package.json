@@ -2,7 +2,7 @@
     "name": "chick0",
     "private": true,
     "scripts": {
-        "dev": "vite dev",
+        "dev": "vite dev --port 4521 --strictPort --open",
         "build": "vite build",
         "build:test": "vite build && test.cmd",
         "preview": "vite preview",
