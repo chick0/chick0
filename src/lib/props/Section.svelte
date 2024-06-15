@@ -40,88 +40,63 @@
 </script>
 
 <div {id} class="section" style="--position: {position}; --height: {height}">
-    <div class="content">
-        <h1 class="title">{title}</h1>
+    <div class="slot">
+        <div class="content">
+            <h1 class="title">{title}</h1>
 
-        {#if subtitle.length != 0}
-            <p class="subtitle">{@html subtitle}</p>
-        {/if}
+            {#if subtitle.length != 0}
+                <p class="subtitle">{@html subtitle}</p>
+            {/if}
 
-        {#if content.length == 0}
-            <slot />
-        {:else}
-            {#each content as line}
-                <p>{@html line}</p>
-            {/each}
-        {/if}
-
-        {#if links.length != 0}
-            <br />
-            <ButtonWrapper>
-                {#each links as link}
-                    <Button
-                        href={link.src}
-                        icon={link.icon}
-                        background={link.color}
-                        text={link.text}>
-                        {link.label}
-                    </Button>
+            {#if content.length == 0}
+                <slot />
+            {:else}
+                {#each content as line}
+                    <p>{@html line}</p>
                 {/each}
-            </ButtonWrapper>
-        {/if}
+            {/if}
+
+            {#if links.length != 0}
+                <br />
+                <ButtonWrapper>
+                    {#each links as link}
+                        <Button
+                            href={link.src}
+                            icon={link.icon}
+                            background={link.color}
+                            text={link.text}>
+                            {link.label}
+                        </Button>
+                    {/each}
+                </ButtonWrapper>
+            {/if}
+        </div>
     </div>
-</div>
 
-<div class="background" style="--bg: {background}; --position: {position}; --height: {height}">
-</div>
+    <div class="slot background" style="--bg: {background}"></div>
 
-{#if useFilterOptions}
-    <div class="filter" style="--height: {height}"></div>
-{/if}
+    {#if useFilterOptions}
+        <div class="slot filter"></div>
+    {/if}
+</div>
 
 <style>
     .section {
+        display: block;
         width: 100%;
         height: var(--height);
-        color: #fff;
     }
 
-    .section > .content {
-        z-index: 5;
-    }
-
-    .section > .content {
+    .slot {
         position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-
-        width: 100%;
-
-        --section-padding: 250px;
-        padding-left: var(--section-padding);
-        padding-right: var(--section-padding);
-    }
-
-    @media (max-width: 768px) {
-        .section > .content {
-            --section-padding: 10px;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1200px) {
-        .section > .content {
-            --section-padding: 50px;
-        }
-    }
-
-    .background {
-        position: relative;
-        top: calc(var(--height) * -1);
+        top: 0;
         margin-bottom: calc(var(--height) * -1);
 
         width: 100%;
         height: var(--height);
+    }
 
+    .background {
         background: var(--bg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -129,16 +104,35 @@
     }
 
     .filter {
-        position: relative;
-        top: calc(var(--height) * -1);
-        margin-bottom: calc(var(--height) * -1);
-
-        width: 100%;
-        height: var(--height);
-
         filter: brightness(0.4);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+    }
+
+    .content {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+
+        width: 100%;
+        color: #fff;
+
+        --section-padding: 250px;
+        padding-left: var(--section-padding);
+        padding-right: var(--section-padding);
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            --section-padding: 10px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .content {
+            --section-padding: 50px;
+        }
     }
 
     .title {
