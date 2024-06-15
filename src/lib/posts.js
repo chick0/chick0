@@ -179,13 +179,4 @@ export const PostList = [
             ],
         },
     },
-    {
-        id: "table",
-        title: "Table",
-        date: "2023-09-26",
-        description: " 정렬 가능한 표를 만들어주는 클래스를 제작했습니다.",
-        hasPost: false,
-        tags: ["JavaScript"],
-        color: "#212121",
-    },
 ]
