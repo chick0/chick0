@@ -26,8 +26,8 @@
     /** @type {import("$lib/posts").Link[]} 링크 목록 */
     export let links = []
 
-    import ButtonWrapper from "$lib/component/layout/ButtonWrapper.svelte"
-    import Button from "$lib/component/props/Button.svelte"
+    import ButtonWrapper from "$lib/layout/ButtonWrapper.svelte"
+    import Button from "$lib/props/Button.svelte"
 
     $: if (!background.startsWith("url(")) {
         // 이미지 여부 검증 (* 일부 상황에서는 색상 코드 사용됨)

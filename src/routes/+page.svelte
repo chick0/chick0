@@ -1,12 +1,12 @@
 <script>
     import { getLinkObject, PostList } from "$lib/posts"
 
-    import Meta from "$lib/Meta.svelte"
-    import Section from "$lib/component/Section.svelte"
-    import Hint from "$lib/component/Hint.svelte"
-    import Content from "$lib/component/Content.svelte"
-    import Plate from "$lib/component/Plate.svelte"
-    import PlateWrapper from "$lib/component/PlateWrapper.svelte"
+    import Meta from "$lib/props/Meta.svelte"
+    import Section from "$lib/props/Section.svelte"
+    import Hint from "$lib/props/Hint.svelte"
+    import Content from "$lib/props/Content.svelte"
+    import Plate from "$lib/props/Plate.svelte"
+    import PlateWrapper from "$lib/layout/PlateWrapper.svelte"
 
     import image_main from "$lib/assets/image/main.webp"
 </script>

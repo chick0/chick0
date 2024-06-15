@@ -3,7 +3,7 @@
     import { RefreshTableOfContents } from "$lib/store"
 
     import "$lib/css/content.css"
-    import TableOfContents from "$lib/component/TableOfContents.svelte"
+    import TableOfContents from "$lib/props/TableOfContents.svelte"
 
     /** @type {string | null} */
     export let id = null

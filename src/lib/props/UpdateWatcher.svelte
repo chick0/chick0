@@ -2,7 +2,7 @@
     import { onDestroy, onMount } from "svelte"
     import { updated } from "$app/stores"
 
-    import Alert from "$lib/component/props/Alert.svelte"
+    import Alert from "$lib/props/Alert.svelte"
 
     /** @type {function | null} */
     let updateUnsubscriber = null

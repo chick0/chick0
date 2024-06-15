@@ -1,10 +1,10 @@
 <script>
     import "$lib/css/base.css"
-    import ReturnButton from "$lib/component/props/ReturnButton.svelte"
-    import BodyLockWrapper from "$lib/component/layout/BodyLockWrapper.svelte"
-    import LoadingWrapper from "$lib/component/layout/LoadingWrapper.svelte"
-    import UpdateWatcher from "$lib/component/props/UpdateWatcher.svelte"
-    import Footer from "$lib/component/layout/Footer.svelte"
+    import ReturnButton from "$lib/props/ReturnButton.svelte"
+    import BodyLockWrapper from "$lib/layout/BodyLockWrapper.svelte"
+    import LoadingWrapper from "$lib/layout/LoadingWrapper.svelte"
+    import UpdateWatcher from "$lib/props/UpdateWatcher.svelte"
+    import Footer from "$lib/layout/Footer.svelte"
 </script>
 
 <ReturnButton />

@@ -2,8 +2,8 @@
     import { getPostBannerFromId } from "$lib/banner"
     import { getLinkObject } from "$lib/posts"
 
-    import ButtonWrapper from "./layout/ButtonWrapper.svelte"
-    import Button from "./props/Button.svelte"
+    import ButtonWrapper from "$lib/layout/ButtonWrapper.svelte"
+    import Button from "$lib/props/Button.svelte"
 
     /** @type {import("$lib/posts").Post} 글 정보 (* 프로젝트 정보) */
     export let post

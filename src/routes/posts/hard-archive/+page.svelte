@@ -1,7 +1,7 @@
 <script>
-    import ContentGroup from "$lib/component/ContentGroup.svelte"
-    import Image from "$lib/component/props/Image.svelte"
-    import Code from "$lib/component/props/Code.svelte"
+    import ContentGroup from "$lib/layout/ContentGroup.svelte"
+    import Image from "$lib/props/Image.svelte"
+    import Code from "$lib/props/Code.svelte"
 
     import imageIndex from "$lib/assets/post/hard-archive/index.png"
     import imageRecordCreate from "$lib/assets/post/hard-archive/record-create.png"

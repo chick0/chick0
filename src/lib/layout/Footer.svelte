@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte"
     import { Confetti } from "svelte-confetti"
-    import Button from "$lib/component/props/Button.svelte"
+    import Button from "$lib/props/Button.svelte"
 
     /** 팬케이크를 다 먹었는가 여부 */
     let isPancakeOver = false

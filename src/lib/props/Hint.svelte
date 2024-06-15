@@ -1,5 +1,5 @@
 <script>
-    import Button from "./props/Button.svelte"
+    import Button from "$lib/props/Button.svelte"
 
     /** @type {string} */
     export let to

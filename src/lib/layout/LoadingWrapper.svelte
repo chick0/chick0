@@ -3,7 +3,7 @@
     import { navigating } from "$app/stores"
     import { AddBodyLockCount, RemoveBodyLockCount } from "$lib/store"
 
-    import Spinner from "$lib/component/props/Spinner.svelte"
+    import Spinner from "$lib/props/Spinner.svelte"
 
     /** @type {boolean} */
     let isLoading = false

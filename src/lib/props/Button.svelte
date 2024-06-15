@@ -1,5 +1,5 @@
 <script>
-    import Icon from "./Icon.svelte"
+    import Icon from "$lib/props/Icon.svelte"
 
     /** @type {string | null} */
     export let id = null

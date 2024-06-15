@@ -1,6 +1,6 @@
 <script>
     import { page } from "$app/stores"
-    import Section from "$lib/component/Section.svelte"
+    import Section from "$lib/props/Section.svelte"
 
     import image_main from "$lib/assets/image/main.webp"
 </script>

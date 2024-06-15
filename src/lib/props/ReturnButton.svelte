@@ -2,8 +2,8 @@
     import { onDestroy, onMount } from "svelte"
     import { page } from "$app/stores"
     import { PageReturn } from "$lib/store"
-    import CenterWrapper from "../layout/CenterWrapper.svelte"
-    import Icon from "$lib/component/props/Icon.svelte"
+    import CenterWrapper from "$lib/layout/CenterWrapper.svelte"
+    import Icon from "$lib/props/Icon.svelte"
 
     /** 클라이언트 준비 완료 여부 */
     let isMounted = false

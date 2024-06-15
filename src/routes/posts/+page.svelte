@@ -1,9 +1,9 @@
 <script>
     import { PostList } from "$lib/posts"
-    import Box from "$lib/component/props/Box.svelte"
-    import TagWrapper from "$lib/component/TagWrapper.svelte"
-    import Tag from "$lib/component/Tag.svelte"
-    import Button from "$lib/component/props/Button.svelte"
+    import Box from "$lib/props/Box.svelte"
+    import TagWrapper from "$lib/layout/TagWrapper.svelte"
+    import Tag from "$lib/props/Tag.svelte"
+    import Button from "$lib/props/Button.svelte"
 
     /** @type {string[]} 필터링 태그 목록 */
     let filteredTagList = []

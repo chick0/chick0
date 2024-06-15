@@ -5,10 +5,10 @@
     import { PostList, getPostDate } from "$lib/posts"
     import { getPostBannerFromId } from "$lib/banner"
 
-    import Intro from "$lib/component/Intro.svelte"
-    import Content from "$lib/component/Content.svelte"
-    import TagWrapper from "$lib/component/TagWrapper.svelte"
-    import Tag from "$lib/component/Tag.svelte"
+    import Intro from "$lib/props/Intro.svelte"
+    import Content from "$lib/props/Content.svelte"
+    import TagWrapper from "$lib/layout/TagWrapper.svelte"
+    import Tag from "$lib/props/Tag.svelte"
 
     let isPostMode = false
 
