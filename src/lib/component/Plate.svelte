@@ -2,6 +2,9 @@
     import { getPostBannerFromId } from "$lib/banner"
     import { getLinkObject } from "$lib/posts"
 
+    import ButtonWrapper from "./layout/ButtonWrapper.svelte"
+    import Button from "./props/Button.svelte"
+
     /** @type {import("$lib/posts").Post} 글 정보 (* 프로젝트 정보) */
     export let post
 
@@ -36,17 +39,18 @@
         {/if}
 
         {#if links.length != 0}
-            <div class="group">
-                {#each links as link}
-                    <a
-                        href={link.src}
-                        style="--background: {link.color}; --text: {link.text ?? '#fff'}">
-                        {#if link.icon != null}
-                            <i class="fa {link.icon}"></i>
-                        {/if}
-                        {link.label}
-                    </a>
-                {/each}
+            <div class="links">
+                <ButtonWrapper>
+                    {#each links as link}
+                        <Button
+                            href={link.src}
+                            icon={link.icon}
+                            background={link.color}
+                            text={link.text}>
+                            {link.label}
+                        </Button>
+                    {/each}
+                </ButtonWrapper>
             </div>
         {/if}
     </div>
@@ -129,7 +133,7 @@
         margin-bottom: 20px;
     }
 
-    .group {
+    .links {
         position: absolute;
         left: var(--plate-padding);
         bottom: var(--plate-padding);

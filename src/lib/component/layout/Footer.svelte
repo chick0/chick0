@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte"
     import { Confetti } from "svelte-confetti"
+    import Button from "$lib/component/props/Button.svelte"
 
     /** 팬케이크를 다 먹었는가 여부 */
     let isPancakeOver = false
@@ -76,9 +77,13 @@
             <div class="pancake">🥞</div>
         </div>
 
-        <a href="#top" title="페이지 상단으로 이동하기">
-            <i class="fa fa-arrow-up"></i>
-        </a>
+        <Button
+            href="#top"
+            icon="fa-arrow-up"
+            iconNoMargin={true}
+            title="페이지 상단으로 이동하기"
+            background="#000"
+            text="#fff" />
     </div>
 </div>
 
@@ -97,23 +102,6 @@
         transform: translate(-50%, -50%);
 
         text-align: center;
-    }
-
-    .footer a {
-        --background: #fff;
-        --text: #000;
-
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-
-        border-radius: 50%;
-    }
-
-    .footer a > i {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
     }
 
     .confetti-wrapper {

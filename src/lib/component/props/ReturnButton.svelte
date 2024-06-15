@@ -2,6 +2,8 @@
     import { onDestroy, onMount } from "svelte"
     import { page } from "$app/stores"
     import { PageReturn } from "$lib/store"
+    import CenterWrapper from "../layout/CenterWrapper.svelte"
+    import Icon from "$lib/component/props/Icon.svelte"
 
     /** 클라이언트 준비 완료 여부 */
     let isMounted = false
@@ -31,7 +33,9 @@
 </script>
 
 <a class="return {isMounted && needReturnButton ? 'show' : ''}" href={$PageReturn}>
-    <i class="fa fa-arrow-left"></i>
+    <CenterWrapper>
+        <Icon icon="fa-arrow-left" noMargin={true} />
+    </CenterWrapper>
 </a>
 
 <style>
@@ -56,13 +60,6 @@
         .return {
             --pos: 10px;
         }
-    }
-
-    .return i {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 
     .return:not(.show) {

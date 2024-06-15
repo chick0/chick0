@@ -26,6 +26,9 @@
     /** @type {import("$lib/posts").Link[]} 링크 목록 */
     export let links = []
 
+    import ButtonWrapper from "$lib/component/layout/ButtonWrapper.svelte"
+    import Button from "$lib/component/props/Button.svelte"
+
     $: if (!background.startsWith("url(")) {
         // 이미지 여부 검증 (* 일부 상황에서는 색상 코드 사용됨)
         const re = /(#[A-z0-9]{6,8})|(rgba?\([0-9, .]*\))/g
@@ -54,18 +57,17 @@
 
         {#if links.length != 0}
             <br />
-            <div class="group">
+            <ButtonWrapper>
                 {#each links as link}
-                    <a
+                    <Button
                         href={link.src}
-                        style="--background: {link.color}; --text: {link.text ?? '#fff'}">
-                        {#if link.icon != null}
-                            <i class="fa {link.icon}"></i>
-                        {/if}
+                        icon={link.icon}
+                        background={link.color}
+                        text={link.text}>
                         {link.label}
-                    </a>
+                    </Button>
                 {/each}
-            </div>
+            </ButtonWrapper>
         {/if}
     </div>
 </div>
@@ -155,10 +157,5 @@
     .subtitle,
     .subtitle :global(*) {
         font-size: 22px;
-    }
-
-    /* icon margin */
-    .fa {
-        margin-right: 3px;
     }
 </style>

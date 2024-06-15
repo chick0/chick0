@@ -1,0 +1,14 @@
+<div class="center-wrapper">
+    <slot />
+</div>
+
+<style>
+    .center-wrapper {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: inline-block;
+    }
+</style>

@@ -1,9 +1,9 @@
 <script>
     import { onDestroy, onMount } from "svelte"
-    import TableOfContents from "$lib/component/TableOfContents.svelte"
+    import { RefreshTableOfContents } from "$lib/store"
 
     import "$lib/css/content.css"
-    import { RefreshTableOfContents } from "$lib/store"
+    import TableOfContents from "$lib/component/TableOfContents.svelte"
 
     /** @type {string | null} */
     export let id = null
@@ -112,16 +112,5 @@
         .page-content {
             --content-padding: 50px;
         }
-    }
-
-    .page-content :global(a) {
-        --background: transparent;
-        --text: #0772fd;
-        padding: 0;
-    }
-
-    .page-content :global(a:hover),
-    .page-content :global(a:focus) {
-        text-decoration: var(--text) 2px underline;
     }
 </style>

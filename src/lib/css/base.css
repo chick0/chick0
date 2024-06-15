@@ -24,25 +24,14 @@ html {
     word-break: keep-all;
 }
 
-a {
-    --background: #000;
-    --text: #fff;
+a:not(.button) {
+    --text: #0772fd;
 
-    background: var(--background);
-    color: var(--text) !important;
+    color: var(--text);
     text-decoration: none;
-    padding: 10px;
 }
 
-a:hover,
-a:focus {
-    filter: brightness(0.9);
-}
-
-.group {
-    --group-gap: 5px;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--group-gap);
+a:not(.button):hover,
+a:not(.button):focus {
+    filter: brightness(0.85);
 }

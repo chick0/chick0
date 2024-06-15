@@ -1,4 +1,6 @@
 <script>
+    import Button from "./props/Button.svelte"
+
     /** @type {string} */
     export let to
 
@@ -7,10 +9,27 @@
 
     /** @type {string} */
     export let height = "150px"
+
+    /** @type {import("$lib/types/ExtraButtonOption").ExtraButtonOption} */
+    let buttonOption = {
+        size: {
+            width: "50px",
+            height: "50px",
+        },
+        borderRadius: "50%",
+        center: true,
+    }
 </script>
 
 <div class="hint" style="--height: {height}">
-    <a href={to}><i class="fa {icon}"></i></a>
+    <div class="hint-button-wrapper">
+        <Button
+            href={to}
+            {icon}
+            iconNoMargin={true}
+            background="rgba(0, 0, 0, 0.4)"
+            extraButtonOption={buttonOption} />
+    </div>
 </div>
 
 <style>
@@ -19,27 +38,18 @@
         width: 100%;
 
         position: absolute;
-        top: calc(100vh - var(--height));
+        bottom: var(--height);
 
-        text-align: center;
-    }
-
-    .hint a {
-        --background: rgba(0, 0, 0, 0.4);
-        --text: #fff;
         animation: hint-anim-frames 1.2s linear infinite;
-
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-
-        border-radius: 50%;
     }
 
-    .hint a > i {
+    .hint-button-wrapper {
+        display: inline-block;
+
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     @keyframes hint-anim-frames {

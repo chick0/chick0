@@ -3,6 +3,7 @@
     import Box from "$lib/component/props/Box.svelte"
     import TagWrapper from "$lib/component/TagWrapper.svelte"
     import Tag from "$lib/component/Tag.svelte"
+    import Button from "$lib/component/props/Button.svelte"
 
     /** @type {string[]} 필터링 태그 목록 */
     let filteredTagList = []
@@ -109,7 +110,11 @@
 
 {#each PostList as post}
     {#if filteredTagList.length == 0 || testPostHasTag(post)}
-        <a id={post.id} href={getHref(post)} on:click={(event) => onPostClicked(event, post)}>
+        <a
+            id={post.id}
+            class="button"
+            href={getHref(post)}
+            on:click={(event) => onPostClicked(event, post)}>
             <div class="post-info" style="--color: {post.color}">
                 <h2>{post.title}</h2>
                 <p class="description">{@html post.description}</p>
@@ -128,17 +133,16 @@
 
 <style>
     a {
-        --background: transpert;
-        --text: #000 !important;
         display: block;
         padding: 0;
 
+        color: #000;
         text-decoration: none !important;
     }
 
     a:hover,
     a:focus {
-        --background: rgba(0, 0, 0, 0.05) !important;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     .post-info {
