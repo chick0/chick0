@@ -1,6 +1,6 @@
 <script>
     import Button from "$lib/props/Button.svelte"
-    import CenterWrapper from "./CenterWrapper.svelte"
+    import CenterWrapper from "../layout/CenterWrapper.svelte"
 
     /** @type {import("$lib/types/ExtraButtonOption").ExtraButtonOption} */
     let buttonOption = {
