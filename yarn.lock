@@ -809,7 +809,6 @@ __metadata:
     prettier-plugin-svelte: "npm:^3.2.4"
     svelte: "npm:^4.2.18"
     svelte-check: "npm:^3.8.0"
-    svelte-confetti: "npm:^2.0.1"
     typescript: "npm:^5.4.5"
     vite: "npm:^5.2.13"
   languageName: unknown
@@ -2690,15 +2689,6 @@ __metadata:
   bin:
     svelte-check: bin/svelte-check
   checksum: 10c0/994662321882224ef8c5bb8b644d30929e3df5ade3dd187130a7c2578d845291d1032e713a2a2d2863fa6cc03dd8f10bbb9d94b2b0179d5974f8435eb49375d2
-  languageName: node
-  linkType: hard
-
-"svelte-confetti@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "svelte-confetti@npm:2.0.1"
-  peerDependencies:
-    svelte: ^4.0.0 || ^5.0.0
-  checksum: 10c0/d2f0d4bc7a680c7a940da826f13c53720b21c7bf8180877d828677947d2318a79a0794e00af5ce8ac20f5fc0124eaff98919ae8707ac062a21b8da6479e2ba82
   languageName: node
   linkType: hard
 
