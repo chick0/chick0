@@ -1,6 +1,7 @@
 <script>
+    import CenterWrapper from "$lib/layout/CenterWrapper.svelte"
+    import Pancake from "$lib/props/Pancake.svelte"
     import Button from "$lib/props/Button.svelte"
-    import CenterWrapper from "../layout/CenterWrapper.svelte"
 
     /** @type {import("$lib/types/ExtraButtonOption").ExtraButtonOption} */
     let buttonOption = {
@@ -15,14 +16,18 @@
 
 <div class="footer">
     <CenterWrapper>
-        <Button
-            href="#top"
-            icon="fa-arrow-up"
-            iconNoMargin={true}
-            title="페이지 상단으로 이동하기"
-            background="#fff"
-            text="#000"
-            extraButtonOption={buttonOption} />
+        <div class="wrapper">
+            <Pancake />
+
+            <Button
+                href="#top"
+                icon="fa-arrow-up"
+                iconNoMargin={true}
+                title="페이지 상단으로 이동하기"
+                background="#fff"
+                text="#000"
+                extraButtonOption={buttonOption} />
+        </div>
     </CenterWrapper>
 </div>
 
@@ -31,5 +36,9 @@
         background-color: #000;
         color: #fff;
         height: 250px;
+    }
+
+    .wrapper {
+        text-align: center;
     }
 </style>

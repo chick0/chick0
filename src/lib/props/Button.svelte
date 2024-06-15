@@ -102,6 +102,7 @@
         background: var(--button-background);
         color: var(--button-text);
         text-decoration: none;
+        text-align: left;
 
         display: inline-block;
         padding: 10px;
